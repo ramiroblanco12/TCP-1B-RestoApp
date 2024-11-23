@@ -70,6 +70,9 @@
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Pedidos.aspx" />
+    <Content Include="Personalizar.aspx" />
+    <Content Include="Productos.aspx" />
+    <Content Include="Reportes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -101,7 +104,29 @@
     <Compile Include="Pedidos.aspx.designer.cs">
       <DependentUpon>Pedidos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Personalizar.aspx.cs">
+      <DependentUpon>Personalizar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personalizar.aspx.designer.cs">
+      <DependentUpon>Personalizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoPedido.cs" />
+    <Compile Include="Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
