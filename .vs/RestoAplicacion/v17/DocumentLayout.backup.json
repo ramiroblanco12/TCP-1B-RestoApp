@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\",
+  "WorkspaceRootPath": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\source\\repos\\restoaplicacion\\aplicacionresto\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\pedidos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\source\\repos\\restoaplicacion\\aplicacionresto\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\aplicacionresto\\paginamaestra.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\paginamaestra.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +34,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Default.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\AplicacionResto\\Default.aspx.cs",
-              "RelativeDocumentMoniker": "AplicacionResto\\Default.aspx.cs",
-              "ToolTip": "C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\AplicacionResto\\Default.aspx.cs",
-              "RelativeToolTip": "AplicacionResto\\Default.aspx.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T00:00:43.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Default.aspx",
-              "DocumentMoniker": "C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\AplicacionResto\\Default.aspx",
-              "RelativeDocumentMoniker": "AplicacionResto\\Default.aspx",
-              "ToolTip": "C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\AplicacionResto\\Default.aspx",
-              "RelativeToolTip": "AplicacionResto\\Default.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-21T23:44:52.403Z",
+              "Title": "Pedidos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Pedidos.aspx.cs",
+              "RelativeDocumentMoniker": "AplicacionResto\\Pedidos.aspx.cs",
+              "ToolTip": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Pedidos.aspx.cs",
+              "RelativeToolTip": "AplicacionResto\\Pedidos.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T19:33:23.006Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PaginaMaestra.Master",
-              "DocumentMoniker": "C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\AplicacionResto\\PaginaMaestra.Master",
-              "RelativeDocumentMoniker": "AplicacionResto\\PaginaMaestra.Master",
-              "ToolTip": "C:\\Users\\tbram\\source\\repos\\RestoAplicacion\\AplicacionResto\\PaginaMaestra.Master",
-              "RelativeToolTip": "AplicacionResto\\PaginaMaestra.Master",
+              "DocumentIndex": 0,
+              "Title": "Pedidos.aspx",
+              "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Pedidos.aspx",
+              "RelativeDocumentMoniker": "AplicacionResto\\Pedidos.aspx",
+              "ToolTip": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Pedidos.aspx",
+              "RelativeToolTip": "AplicacionResto\\Pedidos.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-21T23:43:03.292Z"
+              "WhenOpened": "2024-11-23T19:32:53.801Z",
+              "EditorCaption": ""
             }
           ]
         }
