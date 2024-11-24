@@ -1,0 +1,9 @@
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\obj\Debug\Dominio.Properties.Resources.resources
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\obj\Debug\Dominio.csproj.GenerateResource.cache
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\bin\Debug\Dominio.dll.config
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\bin\Debug\Dominio.dll
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\bin\Debug\Dominio.pdb
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\obj\Debug\Dominio.dll
+C:\Users\tomas\OneDrive\Escritorio\Proyectos\AppResto-Equipo1B\Dominio\obj\Debug\Dominio.pdb
