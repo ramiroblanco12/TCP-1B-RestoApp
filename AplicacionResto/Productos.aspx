@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container-fluid bg-dark text-white">
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -163,3 +162,4 @@
         </div>
     </div>
 
+  </asp:Content>

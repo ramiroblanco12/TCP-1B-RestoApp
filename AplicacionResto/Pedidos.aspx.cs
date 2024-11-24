@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,7 +18,7 @@ namespace AplicacionResto
                 if (!IsPostBack)
                 {
 
-
+                    
                     ProductoNegocio negocio = new ProductoNegocio();
                     List<Producto> lista = negocio.listar();
 
