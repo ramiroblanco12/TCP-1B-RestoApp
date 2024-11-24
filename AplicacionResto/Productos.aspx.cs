@@ -81,7 +81,7 @@ namespace AplicacionResto
                 nuevo.Precio = decimal.Parse(txtMPrecio.Text);
                 nuevo.Id = int.Parse(txtMId.Text);
 
-                //negocio.modificarConSP(nuevo);
+                negocio.modificarConSP(nuevo);
 
 
                 Response.Redirect("Productos.aspx", false);

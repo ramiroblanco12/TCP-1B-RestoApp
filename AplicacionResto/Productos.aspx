@@ -86,7 +86,7 @@
                         { %>
                     <div class="mb-3">
                         <label for="txtMiD" class="form-label">ID</label>
-                        <asp:TextBox runat="server" ID="txtMId" disabled="true" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txtMId" CssClass="form-control" />
                     </div>
                     <div class="mb-3">
                         <label for="txtmNombre" class="form-label">Nombre</label>
