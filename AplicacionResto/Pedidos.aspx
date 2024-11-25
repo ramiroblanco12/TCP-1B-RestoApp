@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="AplicacionResto.Pedidos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <%--    <link href="Estilos.css" rel="stylesheet" />--%>
-    <%--    <script src="JS.js"></script>--%>
+
     <link href="Estilos.css" rel="stylesheet" />
 
 </asp:Content>
@@ -24,18 +23,11 @@
             <div class="tab-pane fade show active" id="mesas" role="tabpanel" aria-labelledby="home-tab">
 
 
-
-
-
-
-
-
-
                 <button type="button" class="btn btn-primary" id="btnAgregar" data-bs-toggle="modal" data-bs-target="#ModalAgregarPedido">Agregar</button>
                 <button type="button" class="btn btn-primary" id="btnModificar">Modificar</button>
                 <button type="button" class="btn btn-primary" id="btnEliminar">Eliminar</button>
             </div>
-
+            <%--Modal para agregar pedido a la session--%>
             <div class="modal fade" id="ModalAgregarPedido" tabindex="-1" aria-labelledby="ModalAgregarPedidoLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content bg-white text-dark">
@@ -46,16 +38,35 @@
                         </div>
 
                         <div class="modal-body">
-                            <div class="mb-3">
+                            <%--<div class="mb-3">
                                 <label for="ddlProducto" class="form-label">Producto</label>
-                                <asp:DropDownList ID="ddlProducto" runat="server"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlProducto" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" CssClass="form-control"></asp:DropDownList>
                             </div>
+                            <div class="mb-3">
+                                <label for="txtPrecio" class="form-label">Precio unitario</label>
+                                <asp:TextBox runat="server" type="number" ID="txtPrecio" CssClass="form-control" />
+                            </div>--%>
+                           
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
+                                <ContentTemplate>
+                                    <div class="mb-3">
+                                        <label for="ddlProducto" class="form-label">Producto</label>
+                                        <asp:DropDownList ID="ddlProducto" runat="server" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" AutoPostBack="true">
+                                        </asp:DropDownList>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="txtPrecio" class="form-label">Precio</label>
+                                        <asp:TextBox runat="server" type="number" ID="txtPrecio" CssClass="form-control" Enabled="false" />
+                                    </div>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                             <div class="mb-3">
                                 <label for="txtCantidad" class="form-label">Cantidad</label>
                                 <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" />
                             </div>
 
-                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
                             <asp:UpdatePanel ID="upProductos" runat="server">
                                 <ContentTemplate>
@@ -77,10 +88,6 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
 
-                            <%-- <div class="mb-3">
-                                <label for="txtPrecio" class="form-label">Precio</label>
-                                <asp:TextBox runat="server" type="number" ID="txtPrecio" CssClass="form-control" />
-                            </div>--%>
                         </div>
 
                         <div class="modal-footer">

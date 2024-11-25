@@ -18,7 +18,7 @@ namespace AplicacionResto
                 if (!IsPostBack)
                 {
 
-                    
+                    txtPrecio.Enabled = false;
                     ProductoNegocio negocio = new ProductoNegocio();
                     List<Producto> lista = negocio.listar();
 
@@ -63,7 +63,7 @@ namespace AplicacionResto
             // Crear el producto y añadirlo a la lista temporal
             var productoPedido = new ProductoPedido
             {
-                ProductoId = productoId,
+                IdProducto = productoId,
                 NombreProducto = nombreProducto,
                 Cantidad = cantidad,
                 // Precio = precio
@@ -82,6 +82,34 @@ namespace AplicacionResto
 
         protected void btnAgregarPedido_Click(object sender, EventArgs e)
         {
+            //decimal montoTotal = ProductosTemp.Sum(p => ObtenerPrecioProducto(p.IdProducto) * p.Cantidad);
+
+            try
+            {
+                Pedido nuevoPedido = new Pedido
+                {
+                    Fecha = DateTime.Now,
+                    IdMozo= 1,  // ID del mozo
+                    IdMesa = 2,  // ID de la mesa
+                    Monto = 100, // Calculado previamente
+                    Productos = new List<ProductoPedido>(ProductosTemp)
+                };
+
+                PedidoNegocio pedidoNegocio = new PedidoNegocio();
+                pedidoNegocio.agregarPedido(nuevoPedido);
+                // Limpiar los productos temporales
+                ProductosTemp.Clear();
+
+                string script = "alert('Se agregó el pedido con exito');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "alertaSimple", script, true);
+
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                Session.Add("error", ex);
+                Response.Redirect("Error.aspx");
+            }
         }
         protected void btnEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -91,7 +119,7 @@ namespace AplicacionResto
             int productoId = int.Parse(dgvProductos.DataKeys[row.RowIndex].Value.ToString()); // Esto puede causar error si no se encuentra el producto en el DataKey
 
             // Verifica si el producto está en la lista antes de eliminarlo
-            var producto = ProductosTemp.FirstOrDefault(p => p.ProductoId == productoId);
+            var producto = ProductosTemp.FirstOrDefault(p => p.IdProducto == productoId);
             if (producto != null)
             {
                 ProductosTemp.Remove(producto);
@@ -101,6 +129,31 @@ namespace AplicacionResto
             else
             {
                 Console.WriteLine("Producto no encontrado para eliminar.");
+            }
+        }
+
+        protected void ddlProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int productoId = int.Parse(ddlProducto.SelectedValue);
+
+                
+                    ProductoNegocio negocio = new ProductoNegocio();
+                    Producto productoSeleccionado = negocio.listar().FirstOrDefault(p => p.Id == productoId);
+
+                    if (productoSeleccionado != null)
+                    {
+                        // Cargar el precio en el TextBox
+                        txtPrecio.Text = productoSeleccionado.Precio.ToString(); 
+                    }
+
+            
+            }
+            catch (Exception ex)
+            {
+                Session.Add("error", ex);
+                Response.Redirect("Error.aspx");
             }
         }
     }

@@ -111,7 +111,6 @@
     <Compile Include="Personalizar.aspx.designer.cs">
       <DependentUpon>Personalizar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductoPedido.cs" />
     <Compile Include="Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -43,11 +43,11 @@ namespace AplicacionResto
 
                 Response.Redirect("Productos.aspx", false);
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                string mensaje = ex.Message.Replace("'", "\\'");
-                string script = $"alert('Ocurrio un error: necesita cargar datos para aceptar' );";
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "errorAlert", script, true);
+                string script = "alert('Ocurrió un error: necesita cargar datos para aceptar');";
+                ScriptManager.RegisterStartupScript(this, GetType(), "errorAlert", script, true);
+
 
             }
         }
