@@ -11,3 +11,16 @@ C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Negocio\bin\D
 C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Negocio\obj\Debug\Negocio.csproj.Up2Date
 C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Negocio\obj\Debug\Negocio.exe
 C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Negocio\obj\Debug\Negocio.pdb
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\bin\Debug\Negocio.exe.config
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\bin\Debug\Negocio.exe
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\bin\Debug\Negocio.pdb
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\bin\Debug\Dominio1.exe
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\bin\Debug\Dominio1.pdb
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\bin\Debug\Dominio1.exe.config
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\obj\Debug\Negocio.Properties.Resources.resources
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\obj\Debug\Negocio.csproj.GenerateResource.cache
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\obj\Debug\Negocio.csproj.Up2Date
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\obj\Debug\Negocio.exe
+C:\Users\tomas\OneDrive\Escritorio\Resto\TCP-1B-RestoApp\Negocio\obj\Debug\Negocio.pdb
