@@ -23,82 +23,59 @@
             <div class="tab-pane fade show active" id="mesas" role="tabpanel" aria-labelledby="home-tab">
 
 
-                <button type="button" class="btn btn-primary" id="btnAgregar" data-bs-toggle="modal" data-bs-target="#ModalAgregarPedido">Agregar</button>
+                <%--<button type="button" class="btn btn-primary" id="btnAgregar" data-bs-toggle="modal" data-bs-target="#ModalAgregarPedido">Agregar</button>
                 <button type="button" class="btn btn-primary" id="btnModificar">Modificar</button>
-                <button type="button" class="btn btn-primary" id="btnEliminar">Eliminar</button>
-            </div>
-            <%--Modal para agregar pedido a la session--%>
-            <div class="modal fade" id="ModalAgregarPedido" tabindex="-1" aria-labelledby="ModalAgregarPedidoLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content bg-white text-dark">
+                <button type="button" class="btn btn-primary" id="btnEliminar">Eliminar</button>--%>
+            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-                        <div class="modal-header">
-                            <h5 class="modal-title">Agregar Producto</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-
-                        <div class="modal-body">
-                            <%--<div class="mb-3">
-                                <label for="ddlProducto" class="form-label">Producto</label>
-                                <asp:DropDownList ID="ddlProducto" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" CssClass="form-control"></asp:DropDownList>
-                            </div>
-                            <div class="mb-3">
-                                <label for="txtPrecio" class="form-label">Precio unitario</label>
-                                <asp:TextBox runat="server" type="number" ID="txtPrecio" CssClass="form-control" />
-                            </div>--%>
-                           
-                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" >
-                                <ContentTemplate>
-                                    <div class="mb-3">
-                                        <label for="ddlProducto" class="form-label">Producto</label>
-                                        <asp:DropDownList ID="ddlProducto" runat="server" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" AutoPostBack="true">
-                                        </asp:DropDownList>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="txtPrecio" class="form-label">Precio</label>
-                                        <asp:TextBox runat="server" type="number" ID="txtPrecio" CssClass="form-control" Enabled="false" />
-                                    </div>
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-                            <div class="mb-3">
-                                <label for="txtCantidad" class="form-label">Cantidad</label>
-                                <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" />
-                            </div>
-
-
-                            <asp:UpdatePanel ID="upProductos" runat="server">
-                                <ContentTemplate>
-                                    <asp:GridView ID="dgvProductos" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered" DataKeyNames="ProductoId">
-                                        <Columns>
-                                            <asp:BoundField DataField="NombreProducto" HeaderText="Producto" />
-                                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
-                                            <asp:BoundField DataField="Precio" HeaderText="Precio Unitario" DataFormatString="{0:C}" />
-                                            <asp:TemplateField>
-                                                <ItemTemplate>
-                                                    <asp:Button ID="btnEliminarProducto" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminarProducto_Click" CommandArgument='<%# Eval("ProductoId") %>' />
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-                                        </Columns>
-                                    </asp:GridView>
-
-                                    <asp:Button ID="btnAgregarProducto" runat="server" Text="Agregar Producto"
-                                        CssClass="btn btn-primary" OnClick="btnAgregarProducto_Click" />
-                                </ContentTemplate>
-                            </asp:UpdatePanel>
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <asp:Button ID="btnAgregarPedido" runat="server" Text="Agregar" OnClick="btnAgregarPedido_Click" CssClass="btn btn-primary" />
-                        </div>
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                <ContentTemplate>
+                    <div class="mb-3">
+                        <label for="ddlProducto" class="form-label">Producto</label>
+                        <asp:DropDownList ID="ddlProducto" runat="server" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" AutoPostBack="true" CssClass="form-control">
+                        </asp:DropDownList>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="txtPrecio" class="form-label">Precio</label>
+                        <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" Enabled="false" />
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <div class="mb-3">
+                <label for="txtCantidad" class="form-label">Cantidad</label>
+                <asp:TextBox runat="server" ID="txtCantidad" CssClass="form-control" />
             </div>
 
 
+            <asp:UpdatePanel ID="upProductos" runat="server">
+                <ContentTemplate>
+                    <asp:GridView ID="dgvProductos" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered" DataKeyNames="IdProducto">
+                        <Columns>
+                            <asp:BoundField DataField="NombreProducto" HeaderText="Producto" />
+                            <asp:BoundField DataField="Cantidad" HeaderText="Cantidad" />
+                            <asp:BoundField DataField="Precio" HeaderText="Precio Unitario" DataFormatString="{0:C}" />
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Button ID="btnEliminarProducto" runat="server" Text="Eliminar" CssClass="btn btn-danger" OnClick="btnEliminarProducto_Click" CommandArgument='<%# Eval("IdProducto") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+
+                    <asp:Button ID="btnAgregarProducto" runat="server" Text="Agregar Producto"
+                        CssClass="btn btn-primary mb-3" OnClick="btnAgregarProducto_Click" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+
+            <button type="button" class="btn btn-secondary mb-3" data-bs-dismiss="modal">Cerrar</button>
+            <asp:Button ID="btnAgregarPedido" runat="server" Text="Agregar" OnClick="btnAgregarPedido_Click" CssClass="btn btn-primary mb-3" />
+
+
+
+
+
+            </div>
 
             <div class="tab-pane fade" id="mostrador" role="tabpanel">
                 <p>Contenido de la segunda pestaña.</p>

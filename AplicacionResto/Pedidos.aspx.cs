@@ -13,16 +13,15 @@ namespace AplicacionResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ProductoNegocio negocio = new ProductoNegocio();
             try
             {
                 if (!IsPostBack)
                 {
-
                     txtPrecio.Enabled = false;
-                    ProductoNegocio negocio = new ProductoNegocio();
-                    List<Producto> lista = negocio.listar();
-
-                    ddlProducto.DataSource = lista;
+                    List<Producto> listaProducto = negocio.listar();
+                    Session["listaProducto"] = listaProducto;
+                    ddlProducto.DataSource = listaProducto;
                     ddlProducto.DataValueField = "Id";
                     ddlProducto.DataTextField = "Nombre";
                     ddlProducto.DataBind();
@@ -54,11 +53,11 @@ namespace AplicacionResto
         }
         protected void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            // Obtener los valores del modal
+
             int productoId = int.Parse(ddlProducto.SelectedValue);
             string nombreProducto = ddlProducto.SelectedItem.Text;
             int cantidad = int.Parse(txtCantidad.Text);
-            // decimal precio = ObtenerPrecioProducto(productoId); // Método para obtener el precio del producto
+            decimal precio = decimal.Parse(txtPrecio.Text);
 
             // Crear el producto y añadirlo a la lista temporal
             var productoPedido = new ProductoPedido
@@ -66,7 +65,7 @@ namespace AplicacionResto
                 IdProducto = productoId,
                 NombreProducto = nombreProducto,
                 Cantidad = cantidad,
-                // Precio = precio
+                Precio = precio
             };
 
             ProductosTemp.Add(productoPedido);
@@ -89,7 +88,7 @@ namespace AplicacionResto
                 Pedido nuevoPedido = new Pedido
                 {
                     Fecha = DateTime.Now,
-                    IdMozo= 1,  // ID del mozo
+                    IdMozo = 1,  // ID del mozo
                     IdMesa = 2,  // ID de la mesa
                     Monto = 100, // Calculado previamente
                     Productos = new List<ProductoPedido>(ProductosTemp)
@@ -134,27 +133,13 @@ namespace AplicacionResto
 
         protected void ddlProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                int productoId = int.Parse(ddlProducto.SelectedValue);
 
-                
-                    ProductoNegocio negocio = new ProductoNegocio();
-                    Producto productoSeleccionado = negocio.listar().FirstOrDefault(p => p.Id == productoId);
+            int productoId = int.Parse(ddlProducto.SelectedItem.Value);
 
-                    if (productoSeleccionado != null)
-                    {
-                        // Cargar el precio en el TextBox
-                        txtPrecio.Text = productoSeleccionado.Precio.ToString(); 
-                    }
+            Producto productoSeleccionado = ((List<Producto>)Session["listaProducto"]).Find(x => x.Id == productoId);
 
-            
-            }
-            catch (Exception ex)
-            {
-                Session.Add("error", ex);
-                Response.Redirect("Error.aspx");
-            }
+            txtPrecio.Text = productoSeleccionado.Precio.ToString();
+
         }
     }
 }
