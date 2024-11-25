@@ -1,0 +1,9 @@
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\obj\Debug\Dominio1.Properties.Resources.resources
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\obj\Debug\Dominio.csproj.GenerateResource.cache
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\bin\Debug\Dominio1.exe.config
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\bin\Debug\Dominio1.exe
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\bin\Debug\Dominio1.pdb
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\obj\Debug\Dominio1.exe
+C:\Users\tbram\Documents\FACULTAD\PROGRAMACION III\RestoAplicacion\Dominio1\obj\Debug\Dominio1.pdb
