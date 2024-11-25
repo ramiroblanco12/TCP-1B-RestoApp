@@ -102,7 +102,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <asp:Button ID="btnAceptarModificar" runat="server" Text="aceptar" OnClick="btnModificar_Click" CssClass="btn btn-primary" />
+                        <asp:Button ID="btnAceptarModificar" runat="server" Text="aceptar" OnClick="btnModificar_Click" CssClass="btn btn-primary"/>
                     </div>
                     <% }
                         else
@@ -134,7 +134,7 @@
                         { %>
                     <div class="mb-3">
                         <label for="txtEiD" class="form-label">ID</label>
-                        <asp:TextBox runat="server" ID="txtEID" CssClass="form-control" />
+                        <asp:TextBox runat="server" ID="txtEId" CssClass="form-control" />
                     </div>
                     <div class="mb-3">
                         <div class="mb-3 text-center">

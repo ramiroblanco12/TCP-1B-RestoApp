@@ -15,12 +15,15 @@ namespace AplicacionResto
         public bool seleccionado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            seleccionado = false;
+            if (!IsPostBack)
+            {
+                txtMId.Enabled = false;
+                txtEId.Enabled = false;
+                seleccionado = false;
             ProductoNegocio negocio = new ProductoNegocio();
             dgvProductos.DataSource = negocio.listar();
             dgvProductos.DataBind();
-
+            }
         }
 
 
@@ -56,7 +59,7 @@ namespace AplicacionResto
             seleccionado = true;
             GridViewRow SelectedRow = dgvProductos.SelectedRow;
 
-            txtEID.Text = SelectedRow.Cells[1].Text;
+            txtEId.Text = SelectedRow.Cells[1].Text;
             txtMId.Text = SelectedRow.Cells[1].Text;
             txtMNombre.Text = SelectedRow.Cells[2].Text;
             txtMDesc.Text = SelectedRow.Cells[3].Text;
@@ -104,8 +107,8 @@ namespace AplicacionResto
                 Producto nuevo = new Producto();
                 ProductoNegocio negocio = new ProductoNegocio();
 
-                nuevo.Id = int.Parse(txtEID.Text);
-                negocio.eliminar(int.Parse(txtEID.Text));
+                nuevo.Id = int.Parse(txtEId.Text);
+                negocio.eliminar(int.Parse(txtEId.Text));
                 Response.Redirect("Productos.aspx");
 
             }
