@@ -19,6 +19,7 @@ namespace AplicacionResto
                 if (!IsPostBack)
                 {
                     txtPrecio.Enabled = false;
+
                     List<Producto> listaProducto = negocio.listar();
                     Session["listaProducto"] = listaProducto;
                     ddlProducto.DataSource = listaProducto;
@@ -26,6 +27,9 @@ namespace AplicacionResto
                     ddlProducto.DataTextField = "Nombre";
                     ddlProducto.DataBind();
 
+                    ddlProducto.Items.Insert(0, new ListItem("Seleccione un producto", ""));
+
+                    ddlProducto.SelectedIndex = 0;
                 }
 
             }
@@ -54,29 +58,39 @@ namespace AplicacionResto
         protected void btnAgregarProducto_Click(object sender, EventArgs e)
         {
 
-            int productoId = int.Parse(ddlProducto.SelectedValue);
-            string nombreProducto = ddlProducto.SelectedItem.Text;
-            int cantidad = int.Parse(txtCantidad.Text);
-            decimal precio = decimal.Parse(txtPrecio.Text);
-
-            // Crear el producto y añadirlo a la lista temporal
-            var productoPedido = new ProductoPedido
+            try
             {
-                IdProducto = productoId,
-                NombreProducto = nombreProducto,
-                Cantidad = cantidad,
-                Precio = precio
-            };
 
-            ProductosTemp.Add(productoPedido);
+                int productoId = int.Parse(ddlProducto.SelectedValue);
+                string nombreProducto = ddlProducto.SelectedItem.Text;
+                int cantidad = int.Parse(txtCantidad.Text);
+                decimal precio = decimal.Parse(txtPrecio.Text);
 
-            // Actualizar el GridView con los productos agregados
-            dgvProductos.DataSource = ProductosTemp;
-            dgvProductos.DataBind();
+                // Crear el producto y añadirlo a la lista temporal
+                var productoPedido = new ProductoPedido
+                {
+                    IdProducto = productoId,
+                    NombreProducto = nombreProducto,
+                    Cantidad = cantidad,
+                    Precio = precio
+                };
 
-            // Limpiar los campos del modal
-            txtCantidad.Text = "";
-            ddlProducto.SelectedIndex = 0;
+                ProductosTemp.Add(productoPedido);
+
+                // Actualizar el GridView con los productos agregados
+                dgvProductos.DataSource = ProductosTemp;
+                dgvProductos.DataBind();
+
+                // Limpiar los campos 
+                txtCantidad.Text = "";
+                txtPrecio.Text = "";
+                ddlProducto.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                string script = "alert('Debe completar todos los campos.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "Alert", script, true);
+            }
         }
 
         protected void btnAgregarPedido_Click(object sender, EventArgs e)
@@ -103,11 +117,10 @@ namespace AplicacionResto
                 ScriptManager.RegisterStartupScript(this, GetType(), "alertaSimple", script, true);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Manejo de errores
-                Session.Add("error", ex);
-                Response.Redirect("Error.aspx");
+                string script = "alert('Debe completar todos los campos.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "Alert", script, true);
             }
         }
         protected void btnEliminarProducto_Click(object sender, EventArgs e)
@@ -134,12 +147,45 @@ namespace AplicacionResto
         protected void ddlProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            int productoId = int.Parse(ddlProducto.SelectedItem.Value);
+            //int productoId = int.Parse(ddlProducto.SelectedItem.Value);
 
-            Producto productoSeleccionado = ((List<Producto>)Session["listaProducto"]).Find(x => x.Id == productoId);
+            //Producto productoSeleccionado = ((List<Producto>)Session["listaProducto"]).Find(x => x.Id == productoId);
 
-            txtPrecio.Text = productoSeleccionado.Precio.ToString();
+            //txtPrecio.Text = productoSeleccionado.Precio.ToString();
 
+            if (!string.IsNullOrEmpty(ddlProducto.SelectedItem.Value))
+            {
+                try
+                {
+                    // Convertir el valor seleccionado a int
+                    int productoId = int.Parse(ddlProducto.SelectedItem.Value);
+
+                    // Buscar el producto correspondiente
+                    Producto productoSeleccionado = ((List<Producto>)Session["listaProducto"]).Find(x => x.Id == productoId);
+
+                    // Mostrar el precio del producto seleccionado
+                    if (productoSeleccionado != null)
+                    {
+                        txtPrecio.Text = productoSeleccionado.Precio.ToString();
+                    }
+                    else
+                    {
+                        // En caso de no encontrar el producto
+                        txtPrecio.Text = "Producto no encontrado";
+                    }
+                }
+                catch (FormatException)
+                {
+                    // En caso de que no se pueda convertir el valor a int
+                    txtPrecio.Text = "Selecciona un producto válido";
+                }
+            }
+            else
+            {
+                // Si no se seleccionó un producto válido, limpiar el precio
+                txtPrecio.Text = "";
+            }
         }
-    }
+    
+}
 }
