@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,38 +13,36 @@ namespace AplicacionResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-            // Validación del lado del servidor
-            if (Page.IsValid)
+            if (Session["usuario"] == null)
             {
-                string username = txtUsername.Text.Trim();
-                string password = txtPassword.Text.Trim();
-
-                // Aquí podrías guardar los datos en la base de datos
-                // Ejemplo de lógica básica
-                if (GuardarUsuarioEnBaseDeDatos(username, password))
-                {
-                    lblMessage.CssClass = "text-success";
-                    lblMessage.Text = "Usuario registrado exitosamente.";
-                }
-                else
-                {
-                    lblMessage.CssClass = "text-danger";
-                    lblMessage.Text = "Hubo un error al registrar el usuario.";
-                }
-
-                lblMessage.Visible = true;
+                Session.Add("error", "debes iniciar sesion para ingresar");
+                Response.Redirect("Default.aspx", false);
             }
-        }
+            else
+            {
+            }
+            }
 
-        private bool GuardarUsuarioEnBaseDeDatos(string username, string password)
+        protected void btnRegistrarse_Click(object sender, EventArgs e)
         {
-            // Implementa tu lógica de guardado en la base de datos aquí.
-            // Retorna true si fue exitoso, de lo contrario false.
-            return true; // Ejemplo ficticio
+            try
+            {
+                CrearUsuario user = new CrearUsuario();
+                CrearUsuarioNegocio usuarioNegocio = new CrearUsuarioNegocio();
+                user.Usuario = txtUsuer.Text;
+                user.Pass =txtPass.Text;
+                user.Tipo = int.Parse(txtTipo.Text);
+                int id = usuarioNegocio.insertarNuevo(user);
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex.ToString());
+            }
         }
     }
 }

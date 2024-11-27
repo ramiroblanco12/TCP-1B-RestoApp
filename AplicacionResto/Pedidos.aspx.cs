@@ -16,18 +16,25 @@ namespace AplicacionResto
             ProductoNegocio negocio = new ProductoNegocio();
             try
             {
-                if (!IsPostBack)
+                if (Session["usuario"] == null)
                 {
-                    txtPrecio.Enabled = false;
-                    List<Producto> listaProducto = negocio.listar();
-                    Session["listaProducto"] = listaProducto;
-                    ddlProducto.DataSource = listaProducto;
-                    ddlProducto.DataValueField = "Id";
-                    ddlProducto.DataTextField = "Nombre";
-                    ddlProducto.DataBind();
-
+                    Session.Add("error", "debes iniciar sesion para ingresar");
+                    Response.Redirect("Default.aspx", false);
                 }
+                else
+                {
+                    if (!IsPostBack)
+                    {
+                        txtPrecio.Enabled = false;
+                        List<Producto> listaProducto = negocio.listar();
+                        Session["listaProducto"] = listaProducto;
+                        ddlProducto.DataSource = listaProducto;
+                        ddlProducto.DataValueField = "Id";
+                        ddlProducto.DataTextField = "Nombre";
+                        ddlProducto.DataBind();
 
+                    }
+                }
             }
             catch (Exception ex)
             {

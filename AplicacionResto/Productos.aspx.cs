@@ -17,6 +17,14 @@ namespace AplicacionResto
         public bool seleccionado { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null)
+            {
+                Session.Add("error", "debes iniciar sesion para ingresar");
+                Response.Redirect("Default.aspx", false);
+            }
+            else
+            {
+
             if (!IsPostBack)
             {
                 txtMId.Enabled = false;
@@ -25,6 +33,7 @@ namespace AplicacionResto
             ProductoNegocio negocio = new ProductoNegocio();
             dgvProductos.DataSource = negocio.listar();
             dgvProductos.DataBind();
+            }
             }
         }
 
