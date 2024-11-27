@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\",
   "Documents": [
     {
@@ -13,6 +14,25 @@
     {
       "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\aplicacionresto\\personalizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\personalizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tomas\\onedrive\\escritorio\\resto\\tcp-1b-restoapp\\aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tomas\\onedrive\\escritorio\\resto\\tcp-1b-restoapp\\aplicacionresto\\pedidos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tomas\\onedrive\\escritorio\\resto\\tcp-1b-restoapp\\aplicacionresto\\personalizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\personalizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+>>>>>>> 3118d5cf97779e535111cc7de9cf540b7b854e48
     }
   ],
   "DocumentGroupContainers": [
@@ -33,6 +53,7 @@
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
+<<<<<<< HEAD
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
@@ -47,10 +68,23 @@
               "ViewState": "AgIAABkAAAAAAAAAAAAgwCIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T23:53:56.606Z",
+=======
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Pedidos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Pedidos.aspx.cs",
+              "RelativeDocumentMoniker": "AplicacionResto\\Pedidos.aspx.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Pedidos.aspx.cs",
+              "RelativeToolTip": "AplicacionResto\\Pedidos.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T01:17:27.153Z",
+>>>>>>> 3118d5cf97779e535111cc7de9cf540b7b854e48
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "Personalizar.aspx",
               "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Personalizar.aspx",
@@ -60,10 +94,35 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-11-26T23:53:49.186Z",
+=======
+              "DocumentIndex": 2,
+              "Title": "Pedidos.aspx",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Pedidos.aspx",
+              "RelativeDocumentMoniker": "AplicacionResto\\Pedidos.aspx",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Pedidos.aspx",
+              "RelativeToolTip": "AplicacionResto\\Pedidos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-26T01:13:36.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Personalizar.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Personalizar.aspx.cs",
+              "RelativeDocumentMoniker": "AplicacionResto\\Personalizar.aspx.cs",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Personalizar.aspx.cs",
+              "RelativeToolTip": "AplicacionResto\\Personalizar.aspx.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAArwCUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T01:12:18.5Z",
+>>>>>>> 3118d5cf97779e535111cc7de9cf540b7b854e48
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "Productos.aspx.cs",
               "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Productos.aspx.cs",
@@ -73,6 +132,17 @@
               "ViewState": "AgIAAA4AAAAAAAAAAAAAABMAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T23:50:34.115Z",
+=======
+              "DocumentIndex": 3,
+              "Title": "Personalizar.aspx",
+              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Personalizar.aspx",
+              "RelativeDocumentMoniker": "AplicacionResto\\Personalizar.aspx",
+              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\AplicacionResto\\Personalizar.aspx",
+              "RelativeToolTip": "AplicacionResto\\Personalizar.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-26T01:12:18.765Z",
+>>>>>>> 3118d5cf97779e535111cc7de9cf540b7b854e48
               "EditorCaption": ""
             }
           ]
