@@ -13,7 +13,7 @@ namespace AplicacionResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             if (Session["usuario"] == null)
             {
                 Session.Add("error", "debes iniciar sesion para ingresar");
@@ -23,34 +23,10 @@ namespace AplicacionResto
             {
             }
             }
-=======
 
-        }
-        protected void btnRegister_Click(object sender, EventArgs e)
-        {
-            //// Validación del lado del servidor
-            //if (Page.IsValid)
-            //{
-            //    string username = txtUsername.Text.Trim();
-            //    string password = txtPassword.Text.Trim();
 
-            //    // Aquí podrías guardar los datos en la base de datos
-            //    // Ejemplo de lógica básica
-            //    if (GuardarUsuarioEnBaseDeDatos(username, password))
-            //    {
-            //        lblMessage.CssClass = "text-success";
-            //        lblMessage.Text = "Usuario registrado exitosamente.";
-            //    }
-            //    else
-            //    {
-            //        lblMessage.CssClass = "text-danger";
-            //        lblMessage.Text = "Hubo un error al registrar el usuario.";
-            //    }
-
-            //    lblMessage.Visible = true;
-            //}
-        }
->>>>>>> 3118d5cf97779e535111cc7de9cf540b7b854e48
+        
+      
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {

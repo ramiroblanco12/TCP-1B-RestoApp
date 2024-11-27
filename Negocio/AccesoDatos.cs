@@ -19,7 +19,7 @@ namespace Negocio
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS01; database=AppResto; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=AppResto; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -34,11 +34,7 @@ namespace Negocio
             comando.CommandText = sp;
 
         }
-        public void setearConsulta(string consulta, string consul, string consul2)
-        {
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = consulta;
-        }
+       
 
         public void ejecutarLectura()
         {
