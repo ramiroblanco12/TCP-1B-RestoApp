@@ -22,10 +22,18 @@ namespace AplicacionResto
             else
             {
             }
+<<<<<<< HEAD
         }
 
 
 
+=======
+            }
+
+
+        
+      
+>>>>>>> fc826623cdddaa66608070dd74d92991ce9f04a8
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {
