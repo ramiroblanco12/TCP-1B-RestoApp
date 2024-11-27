@@ -11,6 +11,14 @@ namespace AplicacionResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null || ((Dominio.Usuario)Session["usuario"]).tipoUsuario != Dominio.TipoUsuario.Admin)
+            {
+                // Redirigir si no es administrador
+                Response.Redirect("/Pedidos.aspx");
+            }
+            else
+            {
+
             if (Session["usuario"] == null)
             {
                 Session.Add("error", "debes iniciar sesion para ingresar");
@@ -19,6 +27,7 @@ namespace AplicacionResto
             else
             {
 
+            }
             }
         }
     }

@@ -24,18 +24,24 @@
                     <div class="collapse navbar-collapse" id="navbarsupportedcontent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" runat="server" href="~/Pedidos.aspx">Restaurante </a>
+                                <a class="nav-link active" runat="server" href="~/pedidos.aspx">restaurante </a>
+                            </li>
+                      
+                            <li class="nav-item">
+                                <a class="nav-link active" runat="server" href="~/productos.aspx">productos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" runat="server" href="~/Productos.aspx">Productos</a>
+                                <a class="nav-link active" runat="server" href="~/personalizar.aspx">configuraciones </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" runat="server" href="~/Personalizar.aspx">Configuraciones </a>
+                                <a class="nav-link active" runat="server" href="~/reportes.aspx">reportes </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" runat="server" href="~/Reportes.aspx">Reportes </a>
-                            </li>
+
                         </ul>
+
+                        <ul class="navbar-nav">
+</ul>
+
                     </div>
                 </div>
             </nav>

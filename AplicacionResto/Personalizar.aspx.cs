@@ -13,6 +13,13 @@ namespace AplicacionResto
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"] == null || ((Dominio.Usuario)Session["usuario"]).tipoUsuario != Dominio.TipoUsuario.Admin)
+            {
+                // Redirigir si no es administrador
+                Response.Redirect("/Pedidos.aspx");
+            }
+            else
+            {
 
             if (Session["usuario"] == null)
             {
@@ -21,19 +28,21 @@ namespace AplicacionResto
             }
             else
             {
+
+
+
             }
-<<<<<<< HEAD
+            }
+
         }
 
 
 
-=======
-            }
+            
 
 
         
-      
->>>>>>> fc826623cdddaa66608070dd74d92991ce9f04a8
+
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)
         {
@@ -43,7 +52,7 @@ namespace AplicacionResto
                 CrearUsuarioNegocio usuarioNegocio = new CrearUsuarioNegocio();
                 user.Usuario = txtUsuer.Text;
                 user.Pass = txtPass.Text;
-                user.Tipo = int.Parse(txtTipo.Text);
+                user.Tipo = int.Parse(dropOpciones.SelectedValue);
                 int id = usuarioNegocio.insertarNuevo(user);
 
 

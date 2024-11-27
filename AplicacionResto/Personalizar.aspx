@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-        <div class="container-fluid bg-dark text-white">
+    <div class="container-fluid bg-dark text-white">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#mesas">Crear usuario</a>
@@ -20,165 +20,162 @@
             <div class="tab-pane fade show active" id="mesas" role="tabpanel" aria-labelledby="home-tab">
 
 
-           <div class="row">
+                <div class="row">
 
-        <div class="col-4">
+                    <div class="col-4">
 
-            <h2>Registro</h2>
-            <div class="mb-3">
-                <label class="form-label">Usuario</label>
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtUsuer" />
-            </div>
-<div class="mb-3">
-    <label class="form-label">Contraseña</label>
-    <div class="input-group">
+                        <h2>Registro</h2>
+                        <div class="mb-3">
+                            <label class="form-label">Usuario</label>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtUsuer" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <div class="input-group">
 
-        <asp:TextBox runat="server" CssClass="form-control" ID="txtPass" TextMode="Password" />
-        
-
-        <button type="button" class="btn btn-outline-secondary" id="togglePassword">
-            <i class="bi bi-eye text-white"></i> 
-        </button>
-    </div>
-</div>
+                                <asp:TextBox runat="server" CssClass="form-control" ID="txtPass" TextMode="Password" />
 
 
-<script>
-    document.getElementById("togglePassword").addEventListener("click", function () {
-        const passwordInput = document.getElementById("<%= txtPass.ClientID %>");
-        const icon = this.querySelector("i");
+                                <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                                    <i class="bi bi-eye text-white"></i>
+                                </button>
+                            </div>
+                        </div>
 
 
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-            icon.classList.remove("bi-eye");
-            icon.classList.add("bi-eye-slash");
-        } else {
-            passwordInput.type = "password";
-            icon.classList.remove("bi-eye-slash");
-            icon.classList.add("bi-eye");
-        }
-    });
-</script>
-            <div class="mb-3">
-                <label class="form-label">Tipo usuario</label>
-                <div class="col-4">
+                        <script>
+                            document.getElementById("togglePassword").addEventListener("click", function () {
+                                const passwordInput = document.getElementById("<%= txtPass.ClientID %>");
+                                const icon = this.querySelector("i");
 
-                <asp:TextBox runat="server" CssClass="form-control" ID="txtTipo" TextMode="Number"/>
+
+                                if (passwordInput.type === "password") {
+                                    passwordInput.type = "text";
+                                    icon.classList.remove("bi-eye");
+                                    icon.classList.add("bi-eye-slash");
+                                } else {
+                                    passwordInput.type = "password";
+                                    icon.classList.remove("bi-eye-slash");
+                                    icon.classList.add("bi-eye");
+                                }
+                            });
+                        </script>
+                        <div class="mb-3">
+                            <label class="form-label">Tipo usuario</label>
+                            <div class="col-5">
+                                <div class="mb-3">
+
+                                    <asp:DropDownList ID="dropOpciones" runat="server" CssClass="form-control">
+                                        <asp:ListItem Text="Seleccione un tipo de usuario" Value="0" />
+                                        <asp:ListItem Text="Admin" Value="2" />
+                                        <asp:ListItem Text="Empleado" Value="1" />
+                                    </asp:DropDownList>
+                                </div>
+                                <asp:Button Text="Registrar" CssClass="btn btn-primary" ID="btnRegistrarse" OnClick="btnRegistrarse_Click" runat="server" />
+                                <a href="Pedidos.aspx">cancelar</a>
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="tab-pane fade" id="mostrador" role="tabpanel">
+                        <p>Contenido de la segunda pestaña.</p>
+                    </div>
+
+                    <div class="tab-pane fade" id="delivery" role="tabpanel">
+                        <label>Pendientes</label>
+                        <table class="table table-bordered border-primary">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Num Pedido</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Descripcion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Ramiro Blanco </td>
+                                    <td>Milanesa con papas fritas </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Tomas Avalos</td>
+                                    <td>Canelones</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Claudio Blanco</td>
+                                    <td>Hamburguesa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <label>En Preparacion</label>
+                        <table class="table table-bordered border-primary">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Num Pedido</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Descripcion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Ramiro Blanco </td>
+                                    <td>Milanesa con papas fritas </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Tomas Avalos</td>
+                                    <td>Canelones</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Claudio Blanco</td>
+                                    <td>Hamburguesa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <label>Pendientes</label>
+                        <table class="table table-bordered border-primary">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Num Pedido</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Descripcion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Ramiro Blanco </td>
+                                    <td>Milanesa con papas fritas </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Tomas Avalos</td>
+                                    <td>Canelones</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Claudio Blanco</td>
+                                    <td>Hamburguesa</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <br />
                 </div>
             </div>
-            <asp:Button  Text="Registrar"  CssClass="btn btn-primary" ID="btnRegistrarse" onclick="btnRegistrarse_Click" runat="server"/>
-            <a href="Pedidos.aspx">cancelar</a>
-
-
-        </div>
-    </div>
-
-
-
-
-            </div>
-
-            <div class="tab-pane fade" id="mostrador" role="tabpanel">
-                <p>Contenido de la segunda pestaña.</p>
-            </div>
-
-            <div class="tab-pane fade" id="delivery" role="tabpanel">
-                <label>Pendientes</label>
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th scope="col">Num Pedido</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Descripcion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Ramiro Blanco </td>
-                            <td>Milanesa con papas fritas </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Tomas Avalos</td>
-                            <td>Canelones</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Claudio Blanco</td>
-                            <td>Hamburguesa</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <label>En Preparacion</label>
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th scope="col">Num Pedido</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Descripcion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Ramiro Blanco </td>
-                            <td>Milanesa con papas fritas </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Tomas Avalos</td>
-                            <td>Canelones</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Claudio Blanco</td>
-                            <td>Hamburguesa</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-                <label>Pendientes</label>
-                <table class="table table-bordered border-primary">
-                    <thead>
-                        <tr>
-                            <th scope="col">Num Pedido</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Descripcion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Ramiro Blanco </td>
-                            <td>Milanesa con papas fritas </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Tomas Avalos</td>
-                            <td>Canelones</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Claudio Blanco</td>
-                            <td>Hamburguesa</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-            </div>
-            <br />
-        </div>
-    </div>
-
-
-
-
-
-
-
 </asp:Content>
