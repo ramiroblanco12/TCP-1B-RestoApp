@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    internal class MesaNegocio
+    public class MesaNegocio
     {
         AccesoDatos datos = new AccesoDatos();
         public bool CrearMesa(Mesa Mesa)
@@ -16,7 +16,7 @@ namespace Negocio
             {
                 datos.setearConsulta("Select Id, Numero, Capacidad  FROM Mesas where Id = @Id AND Numero = @Numero AND Capacidad = @Capacidad");
                 datos.setearParametro("@Id", Mesa.Id);
-                datos.setearParametro("@Numero",Mesa.Numero );
+                datos.setearParametro("@Numero", Mesa.Numero);
                 datos.setearParametro("@Capacidad", Mesa.Capacidad);
 
                 datos.ejecutarLectura();
@@ -40,6 +40,41 @@ namespace Negocio
 
         }
 
+
+        public List<Mesa> listar()
+        {
+            List<Mesa> lista = new List<Mesa>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT Id, Numero,Capacidad,Mozo FROM Mesas");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Mesa aux = new Mesa
+                    {
+                        Id = (int)datos.Lector["Id"],
+                        Numero = (int)datos.Lector["Numero"],
+                        Capacidad = (int)datos.Lector["Capacidad"],
+                        Mozo = (Mozo)datos.Lector["Mozo"]
+                    };
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
 
 
     }

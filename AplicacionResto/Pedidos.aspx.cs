@@ -15,6 +15,7 @@ namespace AplicacionResto
         protected void Page_Load(object sender, EventArgs e)
         {
             ProductoNegocio negocio = new ProductoNegocio();
+            MesaNegocio mesanegocio = new MesaNegocio();
             try
             {
                 if (Session["usuario"] == null)
@@ -32,7 +33,7 @@ namespace AplicacionResto
                     {
                         txtPrecio.Enabled = false;
                         List<Producto> listaProducto = negocio.listar();
-                        List<Mesa> listaMesa = negocio.listar();
+                        List<Mesa> listaMesa = mesanegocio.listar();
                         Session["listaProducto"] = listaProducto;
                         Session["listaMesa"] = listaMesa;
                         ddlProducto.DataSource = listaProducto;
@@ -303,12 +304,12 @@ namespace AplicacionResto
                     int mesaId = int.Parse(ddlMesa.SelectedItem.Value);
 
                     // Buscar la mesa
-                    Mozo mozoSeleccionado = ((List<Mesa>)Session["listaMesa"]).Find(x => x.Id == mesaId);
+                    Mesa mesaSeleccionada = ((List<Mesa>)Session["listaMesa"]).Find(x => x.Id == mesaId);
 
                     // Mostrar el precio del producto seleccionado
                     if (mesaSeleccionada != null)
                     {
-                        txtMozo.Text = mozo.Mozo.ToString();
+                        txtMozo.Text = mesaSeleccionada.Mozo.ToString();
                     }
                     else
                     {
@@ -324,9 +325,9 @@ namespace AplicacionResto
             }
             else
             {
-                // Si no se seleccionó un producto válido, limpiar el precio
-                txtPrecio.Text = "";
-                txtCantidad.Text = "";
+                // Si no se seleccionó una mesa válida
+                txtMozo.Text = "";
+               
             }
         }
     }

@@ -11,5 +11,6 @@ namespace Dominio
         public int Id { get; set; }
         public int Numero { get; set; }
         public int Capacidad { get; set; }
+        public Mozo Mozo { get; set; }
     }
 }
