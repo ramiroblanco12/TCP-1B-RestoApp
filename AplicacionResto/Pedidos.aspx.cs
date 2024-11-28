@@ -68,6 +68,42 @@ namespace AplicacionResto
                 Session["ProductosTemp"] = value;
             }
         }
+        public bool listarCant(int IdRecibido, int CantRecibida)
+        {
+
+            AccesoDatos datos = new AccesoDatos();
+            Producto aux = null;
+
+            try
+            {
+                datos.setearConsulta("Select CantidadDisp From Productos where Id=@Id");
+                datos.setearParametro("@Id", IdRecibido);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    aux = new Producto();
+                    aux.CantidadDisp = (int)datos.Lector["CantidadDisp"];
+                }
+                if (aux != null && aux.CantidadDisp >= CantRecibida)
+                {
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
         protected void btnAgregarProducto_Click(object sender, EventArgs e)
         {
 
@@ -78,31 +114,42 @@ namespace AplicacionResto
                 string nombreProducto = ddlProducto.SelectedItem.Text;
                 int cantidad = int.Parse(txtCantidad.Text);
                 decimal precio = decimal.Parse(txtPrecio.Text);
-
-                // Crear el producto y añadirlo a la lista temporal
-                var productoPedido = new ProductoPedido
+                bool prueba = listarCant(productoId, cantidad);
+                if (prueba)
                 {
-                    IdProducto = productoId,
-                    NombreProducto = nombreProducto,
-                    Cantidad = cantidad,
-                    Precio = precio
-                };
 
-                ProductosTemp.Add(productoPedido);
+                    // Crear el producto y añadirlo a la lista temporal
+                    var productoPedido = new ProductoPedido
+                    {
+                        IdProducto = productoId,
+                        NombreProducto = nombreProducto,
+                        Cantidad = cantidad,
+                        Precio = precio
+                    };
 
-                // Actualizar el GridView con los productos agregados
-                dgvProductos.DataSource = ProductosTemp;
-                dgvProductos.DataBind();
+                    ProductosTemp.Add(productoPedido);
 
-                // Limpiar los campos 
-                txtCantidad.Text = "";
-                txtPrecio.Text = "";
-                ddlProducto.SelectedIndex = 0;
+                    // Actualizar el GridView con los productos agregados
+                    dgvProductos.DataSource = ProductosTemp;
+                    dgvProductos.DataBind();
+
+                    // Limpiar los campos 
+                    txtCantidad.Text = "";
+                    txtPrecio.Text = "";
+                    ddlProducto.SelectedIndex = 0;
+                }
+                else
+                {
+                    string script = "alert('No hay stock disponible para este producto.');";
+                   
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Alert", script, true);
+
+                }
             }
             catch (Exception)
             {
                 string script = "alert('Debe completar todos los campos.');";
-                ClientScript.RegisterStartupScript(this.GetType(), "Alert", script, true);
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Alert", script, true);
             }
         }
 
@@ -237,5 +284,7 @@ namespace AplicacionResto
                 ScriptManager.RegisterStartupScript(this, GetType(), "errorDetalle", script, true);
             }
         }
+
+        
     }
 }

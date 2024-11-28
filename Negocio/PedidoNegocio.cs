@@ -32,11 +32,13 @@ namespace Negocio
                     pedidoId = (int)datos.Lector[0];
                 }
                 datos.cerrarConexion();
+                
 
                 // Agregar los productos relacionados al pedido
                 foreach (var producto in nuevo.Productos)
                 {
                     AccesoDatos datosProductos = new AccesoDatos();
+                    AccesoDatos datosStock = new AccesoDatos();
                     try
                     {
                         datosProductos.setearConsulta("INSERT INTO pedido_productos (pedido_id, producto_id, cantidad) VALUES (@PedidoId, @ProductoId, @Cantidad)");
@@ -44,10 +46,18 @@ namespace Negocio
                         datosProductos.setearParametro("@ProductoId", producto.IdProducto);
                         datosProductos.setearParametro("@Cantidad", producto.Cantidad);
                         datosProductos.ejecutarAccion();
+
+
+                        //Actualizacion de stock del producto
+                        datosStock.setearConsulta("UPDATE Productos SET CantidadDisp = CantidadDisp - @Cantidad WHERE Id = @ProductoId");
+                        datosStock.setearParametro("@Cantidad", producto.Cantidad);
+                        datosStock.setearParametro("@ProductoId", producto.IdProducto);
+                        datosStock.ejecutarAccion();
                     }
                     finally
                     {
                         datosProductos.cerrarConexion();
+                        datosStock.cerrarConexion();
                     }
                 }
             }

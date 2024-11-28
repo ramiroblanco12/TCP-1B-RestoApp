@@ -51,6 +51,15 @@ namespace AplicacionResto
         protected global::System.Web.UI.WebControls.TextBox txtPrecio;
 
         /// <summary>
+        /// Control txtCantDisp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCantDisp;
+
+        /// <summary>
         /// Control btnaceptar.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace AplicacionResto
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMPrecio;
+
+        /// <summary>
+        /// Control txtMCantDisp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMCantDisp;
 
         /// <summary>
         /// Control btnAceptarModificar.

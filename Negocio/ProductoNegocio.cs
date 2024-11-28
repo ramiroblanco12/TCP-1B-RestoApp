@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Select Id,Nombre ,Descripcion, Precio From Productos");
+                datos.setearConsulta("Select Id,Nombre ,Descripcion, Precio, CantidadDisp From Productos");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,6 +27,7 @@ namespace Negocio
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.CantidadDisp = (int)datos.Lector["CantidadDisp"];
 
                     lista.Add(aux);
                 }
@@ -54,6 +55,7 @@ namespace Negocio
                 datos.setearParametro("@nombre", nuevo.Nombre);
                 datos.setearParametro("@desc", nuevo.Descripcion);
                 datos.setearParametro("@precio", nuevo.Precio);
+                datos.setearParametro("@cant", nuevo.CantidadDisp);
 
                 datos.ejecutarAccion();
             }
@@ -77,6 +79,7 @@ namespace Negocio
                 datos.setearParametro("@desc", prod.Descripcion);
                 datos.setearParametro("@precio", prod.Precio);
                 datos.setearParametro("@id", prod.Id);
+                datos.setearParametro("@cant", prod.CantidadDisp);
 
                 datos.ejecutarAccion();
             }
@@ -109,5 +112,7 @@ namespace Negocio
                 datos = null;
             }
         }
+
+        
     }
 }

@@ -22,6 +22,7 @@
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                     <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" />
                     <asp:BoundField HeaderText="Precio" DataField="Precio" />
+                    <asp:BoundField HeaderText="Cantidad Disponible" DataField="CantidadDisp" />
                 </Columns>
 
             </asp:GridView>
@@ -47,8 +48,8 @@
                     <h5 class="modal-title" id="formularioModalLabelAgregar">Agregar Producto</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                   <div class="modal-body">
-                       <div class="mb-3">
+                <div class="modal-body">
+                    <div class="mb-3">
                         <label for="txtNombre" class="form-label">Nombre</label>
                         <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
                     </div>
@@ -60,106 +61,114 @@
                         <label for="txtPrecio" class="form-label">Precio</label>
                         <asp:TextBox runat="server" type="number" ID="txtPrecio" CssClass="form-control" />
                     </div>
+                    <div class="mb-3">
+                        <label for="txtCantDisp" class="form-label">Cantidad Disponible</label>
+                        <asp:TextBox runat="server" type="number" ID="txtCantDisp" CssClass="form-control" />
                     </div>
+                </div>
 
-                    <div class="modal-footer">
+                <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     <asp:Button ID="btnaceptar" runat="server" Text="aceptar" OnClick="btnAceptar_Click" CssClass="btn btn-primary" />
-                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <%--FORMULARIO MODIFICAR--%>
+    <%--FORMULARIO MODIFICAR--%>
 
-        <div class="modal fade" id="formularioModalModi" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content bg-white text-dark">
+    <div class="modal fade" id="formularioModalModi" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white text-dark">
 
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="formularioModalLabelModi">Modificar Producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formularioModalLabelModi">Modificar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <% if (seleccionado)
+                        { %>
+                    <div class="mb-3">
+                        <label for="txtMiD" class="form-label">ID</label>
+                        <asp:TextBox runat="server" ID="txtMId" CssClass="form-control" />
                     </div>
-
-                    <div class="modal-body">
-                        <% if (seleccionado)
-                            { %>
-                        <div class="mb-3">
-                            <label for="txtMiD" class="form-label">ID</label>
-                            <asp:TextBox runat="server" ID="txtMId" CssClass="form-control" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtmNombre" class="form-label">Nombre</label>
-                            <asp:TextBox runat="server" ID="txtMNombre" CssClass="form-control" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtMDesc" class="form-label">Descripción</label>
-                            <asp:TextBox runat="server" ID="txtMDesc" CssClass="form-control" />
-                        </div>
-                        <div class="mb-3">
-                            <label for="txtMPrecio" class="form-label">Precio</label>
-                            <asp:TextBox runat="server" ID="txtMPrecio" CssClass="form-control" />
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <asp:Button ID="btnAceptarModificar" runat="server" Text="aceptar" OnClick="btnModificar_Click" CssClass="btn btn-primary" />
-                        </div>
-                        <% }
-                            else
-                            { %>
-
-                        <div class="alert alert-warning">Por favor, seleccione un producto antes de modificar.</div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-                        </div>
-                        <% } %>
+                    <div class="mb-3">
+                        <label for="txtmNombre" class="form-label">Nombre</label>
+                        <asp:TextBox runat="server" ID="txtMNombre" CssClass="form-control" />
                     </div>
+                    <div class="mb-3">
+                        <label for="txtMDesc" class="form-label">Descripción</label>
+                        <asp:TextBox runat="server" ID="txtMDesc" CssClass="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtMPrecio" class="form-label">Precio</label>
+                        <asp:TextBox runat="server" ID="txtMPrecio" CssClass="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtMCantDisp" class="form-label">Cantidad Disponible</label>
+                        <asp:TextBox runat="server" ID="txtMCantDisp" CssClass="form-control" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <asp:Button ID="btnAceptarModificar" runat="server" Text="aceptar" OnClick="btnModificar_Click" CssClass="btn btn-primary" />
+                    </div>
+                    <% }
+                        else
+                        { %>
+
+                    <div class="alert alert-warning">Por favor, seleccione un producto antes de modificar.</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>
+    </div>
 
-        <%--Formulario Eliminar--%>
-        <div class="modal fade" id="formularioModalEliminar" tabindex="-1" aria-labelledby="formularioModalLabelElim" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content bg-white text-dark">
+    <%--Formulario Eliminar--%>
+    <div class="modal fade" id="formularioModalEliminar" tabindex="-1" aria-labelledby="formularioModalLabelElim" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white text-dark">
 
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="formularioModalLabelEliminar">Eliminar Producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <% if (seleccionado)
-                            { %>
-                        <div class="mb-3">
-                            <label for="txtEiD" class="form-label">ID</label>
-                            <asp:TextBox runat="server" ID="txtEId" CssClass="form-control" />
-                        </div>
-                        <div class="mb-3">
-                            <div class="mb-3 text-center">
-                                <label class="form-label">¿Está seguro que desea eliminar el objeto seleccionado?</label>
-                            </div>
-                            <div class="d-flex justify-content-around mt-3">
-                                <asp:Button ID="btnAceptarEliminar" runat="server" Text="Aceptar" OnClick="btnAceptarEliminar_Click" CssClass="btn btn-primary" />
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            </div>
-                        </div>
-
-                        <% }
-                            else
-                            { %>
-                        <div class="alert alert-warning">Por favor, seleccione un producto antes de eliminar.</div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-                        </div>
-                        <% } %>
-                    </div>
-
-
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formularioModalLabelEliminar">Eliminar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
+                <div class="modal-body">
+                    <% if (seleccionado)
+                        { %>
+                    <div class="mb-3">
+                        <label for="txtEiD" class="form-label">ID</label>
+                        <asp:TextBox runat="server" ID="txtEId" CssClass="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <div class="mb-3 text-center">
+                            <label class="form-label">¿Está seguro que desea eliminar el objeto seleccionado?</label>
+                        </div>
+                        <div class="d-flex justify-content-around mt-3">
+                            <asp:Button ID="btnAceptarEliminar" runat="server" Text="Aceptar" OnClick="btnAceptarEliminar_Click" CssClass="btn btn-primary" />
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+
+                    <% }
+                        else
+                        { %>
+                    <div class="alert alert-warning">Por favor, seleccione un producto antes de eliminar.</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+                    </div>
+                    <% } %>
+                </div>
+
+
             </div>
         </div>
+    </div>
 </asp:Content>

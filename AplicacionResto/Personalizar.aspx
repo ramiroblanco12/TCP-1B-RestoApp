@@ -7,17 +7,20 @@
     <div class="container-fluid bg-dark text-white">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#mesas">Crear usuario</a>
+                <a class="nav-link active" data-bs-toggle="tab" aria-current="page" href="#registro">Crear usuario</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#mostrador">Configuracion de mesas</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#configMesa">Configuracion de mesas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#configMozo">Configuracion de mozos</a>
             </li>
 
 
         </ul>
 
         <div class="tab-content mt-3">
-            <div class="tab-pane fade show active" id="mesas" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane fade show active" id="registro" role="tabpanel" aria-labelledby="home-tab">
 
 
                 <div class="row">
@@ -83,99 +86,19 @@
 
                     </div>
 
-                    <div class="tab-pane fade" id="mostrador" role="tabpanel">
-                        <p>Contenido de la segunda pestaña.</p>
-                    </div>
-
-                    <div class="tab-pane fade" id="delivery" role="tabpanel">
-                        <label>Pendientes</label>
-                        <table class="table table-bordered border-primary">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Num Pedido</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Descripcion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ramiro Blanco </td>
-                                    <td>Milanesa con papas fritas </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Tomas Avalos</td>
-                                    <td>Canelones</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Claudio Blanco</td>
-                                    <td>Hamburguesa</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <label>En Preparacion</label>
-                        <table class="table table-bordered border-primary">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Num Pedido</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Descripcion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ramiro Blanco </td>
-                                    <td>Milanesa con papas fritas </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Tomas Avalos</td>
-                                    <td>Canelones</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Claudio Blanco</td>
-                                    <td>Hamburguesa</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                        <label>Pendientes</label>
-                        <table class="table table-bordered border-primary">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Num Pedido</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Descripcion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Ramiro Blanco </td>
-                                    <td>Milanesa con papas fritas </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Tomas Avalos</td>
-                                    <td>Canelones</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Claudio Blanco</td>
-                                    <td>Hamburguesa</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-
-                    </div>
-                    <br />
                 </div>
             </div>
+
+        </div>
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade" id="configMesa" role="tabpanel">
+                <p>Contenido de la segunda pestaña.</p>
+            </div>
+        </div>
+        <div class="tab-content mt-3">
+            <div class="tab-pane fade" id="configMozo" role="tabpanel">
+                <p>Contenido de la tercera pestaña.</p>
+            </div>
+        </div>
+    </div>
 </asp:Content>

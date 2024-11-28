@@ -38,6 +38,7 @@ namespace AplicacionResto
             {
                 txtMId.Enabled = false;
                 txtEId.Enabled = false;
+                txtEId.Enabled = false;
                 seleccionado = false;
             ProductoNegocio negocio = new ProductoNegocio();
             dgvProductos.DataSource = negocio.listar();
@@ -61,6 +62,7 @@ namespace AplicacionResto
                     nuevo.Nombre = txtNombre.Text;
                     nuevo.Descripcion = txtDesc.Text;
                     nuevo.Precio = decimal.Parse(txtPrecio.Text);
+                    nuevo.CantidadDisp = int.Parse(txtCantDisp.Text);
                     negocio.agregarConSP(nuevo);
 
 
@@ -86,6 +88,7 @@ namespace AplicacionResto
             txtMNombre.Text = SelectedRow.Cells[2].Text;
             txtMDesc.Text = SelectedRow.Cells[3].Text;
             txtMPrecio.Text = SelectedRow.Cells[4].Text;
+            txtMCantDisp.Text = SelectedRow.Cells[5].Text;
         }
 
         protected void CargaDGV()
@@ -105,6 +108,7 @@ namespace AplicacionResto
                 nuevo.Descripcion = txtMDesc.Text;
                 nuevo.Precio = decimal.Parse(txtMPrecio.Text);
                 nuevo.Id = int.Parse(txtMId.Text);
+                nuevo.CantidadDisp = int.Parse(txtMCantDisp.Text);
 
                 negocio.modificarConSP(nuevo);
 

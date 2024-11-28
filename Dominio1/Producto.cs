@@ -15,8 +15,9 @@ namespace Dominio
         public string Descripcion { get; set; }
 
         public decimal Precio { get; set; }
+        public int CantidadDisp { get; set; }
 
-        public override string ToString()
+        public override string ToString()   
         {
             return Descripcion;
         }
