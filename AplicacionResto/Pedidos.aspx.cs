@@ -15,6 +15,7 @@ namespace AplicacionResto
         protected void Page_Load(object sender, EventArgs e)
         {
             ProductoNegocio negocio = new ProductoNegocio();
+            MesaNegocio mesanegocio = new MesaNegocio();
             try
             {
                 if (Session["usuario"] == null)
@@ -32,15 +33,23 @@ namespace AplicacionResto
                     {
                         txtPrecio.Enabled = false;
                         List<Producto> listaProducto = negocio.listar();
+                        List<Mesa> listaMesa = mesanegocio.listar();
                         Session["listaProducto"] = listaProducto;
+                        Session["listaMesa"] = listaMesa;
                         ddlProducto.DataSource = listaProducto;
                         ddlProducto.DataValueField = "Id";
                         ddlProducto.DataTextField = "Nombre";
                         ddlProducto.DataBind();
+                        ddlMesa.DataSource = listaMesa;
+                        ddlMesa.DataValueField = "Id";
+                        ddlMesa.DataTextField = "Numero";
+                        ddlMesa.DataBind();
 
                         ddlProducto.Items.Insert(0, new ListItem("Seleccione un producto", ""));
+                        ddlMesa.Items.Insert(0, new ListItem("Seleccione una mesa", ""));
 
                         ddlProducto.SelectedIndex = 0;
+                        ddlMesa.SelectedIndex = 0;
 
                         cargarPedidos();
                     }
@@ -141,7 +150,7 @@ namespace AplicacionResto
                 else
                 {
                     string script = "alert('No hay stock disponible para este producto.');";
-                   
+
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "Alert", script, true);
 
                 }
@@ -223,7 +232,7 @@ namespace AplicacionResto
             {
                 try
                 {
-                    
+
                     int productoId = int.Parse(ddlProducto.SelectedItem.Value);
 
                     // Buscar el producto
@@ -275,7 +284,7 @@ namespace AplicacionResto
                 dgvDetallePedido.DataSource = detalles;
                 dgvDetallePedido.DataBind();
 
-              
+
             }
             catch (Exception ex)
             {
@@ -285,6 +294,42 @@ namespace AplicacionResto
             }
         }
 
-        
+        protected void ddlMesa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(ddlProducto.SelectedItem.Value))
+            {
+                try
+                {
+
+                    int mesaId = int.Parse(ddlMesa.SelectedItem.Value);
+
+                    // Buscar la mesa
+                    Mesa mesaSeleccionada = ((List<Mesa>)Session["listaMesa"]).Find(x => x.Id == mesaId);
+
+                    // Mostrar el precio del producto seleccionado
+                    if (mesaSeleccionada != null)
+                    {
+                        txtMozo.Text = mesaSeleccionada.Mozo.ToString();
+                    }
+                    else
+                    {
+                        // En caso de no encontrar el producto
+                        txtMozo.Text = "Mesa no encontrada";
+                    }
+                }
+                catch (FormatException)
+                {
+                    // En caso de que no se pueda convertir el valor a int
+                    txtMozo.Text = "Selecciona una mesa válida";
+                }
+            }
+            else
+            {
+                // Si no se seleccionó una mesa válida
+                txtMozo.Text = "";
+               
+            }
+        }
     }
 }
+
