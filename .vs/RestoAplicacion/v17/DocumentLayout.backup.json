@@ -7,23 +7,23 @@
       "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\personalizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\aplicacionresto\\personalizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\personalizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mesanegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\dominio1\\mesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\dominio1\\mesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|solutionrelative:dominio1\\mesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\dominio1\\mozo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\dominio1\\mozo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|solutionrelative:dominio1\\mozo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\negocio\\mozonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\negocio\\mozonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mozonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,8 +58,7 @@
               "RelativeToolTip": "Negocio\\MozoNegocio.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T21:25:52.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T21:25:52.103Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "Dominio1\\Mozo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T21:24:58.082Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T21:24:58.082Z"
             },
             {
               "$type": "Document",
@@ -84,8 +82,7 @@
               "RelativeToolTip": "Dominio1\\Mesa.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T21:18:00.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T21:18:00.766Z"
             },
             {
               "$type": "Document",
@@ -97,8 +94,7 @@
               "RelativeToolTip": "Negocio\\MesaNegocio.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T21:16:03.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T21:16:03.43Z"
             },
             {
               "$type": "Document",
@@ -110,8 +106,7 @@
               "RelativeToolTip": "AplicacionResto\\Personalizar.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-11-28T21:01:20.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-28T21:01:20.209Z"
             },
             {
               "$type": "Document",
