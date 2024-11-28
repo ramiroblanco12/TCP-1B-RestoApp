@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="AplicacionResto.Pedidos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-     
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -22,12 +20,22 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
                     <div class="tab-content mt-3">
-                        <div class="tab-pane fade show active" style="align-content: center; justify-content: center; height:auto; padding-bottom: 0;" id="mesas" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" style="align-content: center; justify-content: center; height: auto; padding-bottom: 0;" id="mesas" role="tabpanel" aria-labelledby="home-tab">
 
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
+                                    <div class="mb-3">
+                                        <label for="ddlMesa" class="form-label">Mesa</label>
+                                        <asp:DropDownList ID="ddlMesa" runat="server" OnSelectedIndexChanged="ddlMesa_SelectedIndexChanged" AutoPostBack="true" CssClass="form-select">
+                                            <asp:ListItem Text="Seleccione una mesa" Value="" Enabled="false" />
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="txtMozo" class="form-label">Mozo</label>
+                                        <asp:TextBox runat="server" ID="txtMozo" CssClass="form-control" Enabled="false" />
+                                    </div>
                                     <div class="mb-3">
                                         <label for="ddlProducto" class="form-label">Producto</label>
                                         <asp:DropDownList ID="ddlProducto" runat="server" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" AutoPostBack="true" CssClass="form-select">
@@ -76,39 +84,39 @@
             </div>
         </div>
 
-        <div class="tab-pane fade bg-dark" style="height: 100vh; " id="mostrador" role="tabpanel">
+        <div class="tab-pane fade bg-dark" style="height: 100vh;" id="mostrador" role="tabpanel">
             <asp:UpdatePanel runat="server">
                 <ContentTemplate>
 
-            <div class="tab-content mt-3 bg-dark" style="height: 100%;">
-                <div class="tab-pane fade show active" id="Pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
-                    
-                    <asp:GridView ID="dgvPedidos" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-hover" DataKeyNames="Id">
-                        <Columns>
-                            <asp:BoundField HeaderText="Id" DataField="Id" />
-                            <asp:BoundField HeaderText="Fecha" DataField="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
-                            <asp:BoundField HeaderText="Id Mozo" DataField="IdMozo" />
-                            <asp:BoundField HeaderText="Id Mesa" DataField="IdMesa" />
-                            <asp:BoundField HeaderText="Monto Total" DataField="Monto" DataFormatString="{0:$#,##0.00}" HtmlEncode="false"/>
-                            <asp:TemplateField>
-                                <ItemTemplate>
-                                    <asp:Button ID="btnVerDetalle" runat="server" Text="Ver Detalle" CssClass="btn btn-primary btn-sm" OnClick="btnVerDetalle_Click" />
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
-                </div>
-                <div class="mt-3">
-                    
-                    <asp:GridView ID="dgvDetallePedido" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-hover">
-                        <Columns>
-                            <asp:BoundField HeaderText="Producto" DataField="NombreProducto" />
-                            <asp:BoundField HeaderText="Cantidad" DataField="Cantidad" />
-                            <asp:BoundField HeaderText="Precio" DataField="Precio" />
-                        </Columns>
-                    </asp:GridView>
-                </div>
-            </div>
+                    <div class="tab-content mt-3 bg-dark" style="height: 100%;">
+                        <div class="tab-pane fade show active" id="Pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
+
+                            <asp:GridView ID="dgvPedidos" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-hover" DataKeyNames="Id">
+                                <Columns>
+                                    <asp:BoundField HeaderText="Id" DataField="Id" />
+                                    <asp:BoundField HeaderText="Fecha" DataField="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
+                                    <asp:BoundField HeaderText="Id Mozo" DataField="IdMozo" />
+                                    <asp:BoundField HeaderText="Id Mesa" DataField="IdMesa" />
+                                    <asp:BoundField HeaderText="Monto Total" DataField="Monto" DataFormatString="{0:$#,##0.00}" HtmlEncode="false" />
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <asp:Button ID="btnVerDetalle" runat="server" Text="Ver Detalle" CssClass="btn btn-primary btn-sm" OnClick="btnVerDetalle_Click" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                        <div class="mt-3">
+
+                            <asp:GridView ID="dgvDetallePedido" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-hover">
+                                <Columns>
+                                    <asp:BoundField HeaderText="Producto" DataField="NombreProducto" />
+                                    <asp:BoundField HeaderText="Cantidad" DataField="Cantidad" />
+                                    <asp:BoundField HeaderText="Precio" DataField="Precio" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
                 </ContentTemplate>
             </asp:UpdatePanel>
 
