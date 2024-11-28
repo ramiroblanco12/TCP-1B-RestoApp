@@ -89,7 +89,7 @@
                             <asp:BoundField HeaderText="Fecha" DataField="Fecha" DataFormatString="{0:dd/MM/yyyy}" />
                             <asp:BoundField HeaderText="Id Mozo" DataField="IdMozo" />
                             <asp:BoundField HeaderText="Id Mesa" DataField="IdMesa" />
-                            <asp:BoundField HeaderText="Monto Total" DataField="Monto" DataFormatString="{0:C}" />
+                            <asp:BoundField HeaderText="Monto Total" DataField="Monto" DataFormatString="{0:$#,##0.00}" HtmlEncode="false"/>
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:Button ID="btnVerDetalle" runat="server" Text="Ver Detalle" CssClass="btn btn-primary btn-sm" OnClick="btnVerDetalle_Click" />
