@@ -23,7 +23,7 @@
             <div class="tab-pane fade show active" id="registro" role="tabpanel" aria-labelledby="home-tab">
 
 
-                <div class="row">
+                <div class="row justify-content-center">
 
                     <div class="col-4">
 
@@ -94,6 +94,7 @@
             <div class="tab-pane fade" id="configMesa" role="tabpanel">
                 <p>Contenido de la segunda pestaña.</p>
             </div>
+
         </div>
         <div class="tab-content mt-3">
             <div class="tab-pane fade" id="configMozo" role="tabpanel">

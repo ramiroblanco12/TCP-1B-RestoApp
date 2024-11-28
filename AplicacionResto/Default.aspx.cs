@@ -16,6 +16,7 @@ namespace Resto
             
 
         }
+
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Usuario usuario;
@@ -31,7 +32,7 @@ namespace Resto
                 else
                 {
                     Session.Add("Error", "Usuario o Contraseña Incorrectos");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx");
                 }
 
             }
