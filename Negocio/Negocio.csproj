@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="CrearUsuarioNegocio.cs" />
+    <Compile Include="MesaNegocio.cs" />
+    <Compile Include="MozoNegocio.cs" />
     <Compile Include="PedidoNegocio.cs" />
     <Compile Include="ProductoNegocio.cs" />
     <Compile Include="Program.cs" />
