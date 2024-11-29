@@ -1,0 +1,202 @@
+Create Database AppResto
+Collate Latin1_General_CI_AI
+Go
+Use AppResto
+Go
+
+CREATE table Productos(
+    Id int not null primary key identity (1,1),
+    Nombre varchar(50) not null,
+    Descripcion varchar(100) not null,
+    Precio money not null
+)
+
+
+create table Mozos (
+  Id int not null primary key identity (1,1),
+   Nombre varchar(50) not null,
+   Apellido varchar(50) not null,
+);
+
+create table Mesas (
+  Id int not null primary key identity (1,1),
+  Numero int not null unique,
+  Capacidad int not null
+);
+
+create table Pedidos (
+  Id int not null primary key identity (1,1),
+  Fecha DATETIME NOT NULL DEFAULT GETDATE(),
+  Mozo_id int references Mozos (Id),
+  Mesa_id int references Mesas (Id),
+  Monto money not null
+);
+
+create table pedido_productos (
+  pedido_id int references pedidos (Id),
+  producto_id int references productos (Id),
+  cantidad int not null,
+  primary key (pedido_id, producto_id)
+);
+
+create table mozo_mesas (
+  mozo_id int references mozos (id),
+  mesa_id int references mesas (id),
+  primary key (mozo_id, mesa_id)
+);
+
+SELECT * from Productos
+INSERT INTO Productos (Nombre,Descripcion,Precio) VALUES
+('Cocacola', 'gaseosa',2000),
+('milanesa', 'milanesa de carne con guarnicion',10000)
+
+alter table Productos
+add Activo bit
+
+update Productos
+set Activo=1
+
+create procedure spAltaProducto
+@nombre varchar(50),
+@desc varchar(100),
+@precio money
+as 
+insert into Productos values (@nombre,@desc,@precio,1)
+
+ALTER PROCEDURE spAltaProducto
+    @nombre VARCHAR(50),
+    @desc VARCHAR(100),
+    @precio MONEY
+AS
+BEGIN
+    INSERT INTO Productos (Nombre, Descripcion, Precio, Activo) 
+    VALUES (@nombre, @desc, @precio, 1)
+    end
+
+CREATE TABLE Usuarios (
+    Id INT IDENTITY (1, 1) NOT NULL,
+    Usuario VARCHAR (50) NOT NULL,
+    Pass VARCHAR (50) NOT NULL,
+    TipoUsuario INT NOT NULL,
+);
+
+INSERT into Usuarios (Usuario,Pass,TipoUsuario)
+VALUES
+('Ramiro','Blanco',2),
+('Tomas','Avalos',2),
+('Claudio','Blanco',1);
+
+CREATE PROCEDURE spModificarProducto
+    @nombre VARCHAR(50),
+    @desc VARCHAR(100),
+    @precio MONEY,
+    @id int
+AS
+    update Productos set  Nombre = @nombre, Descripcion = @desc, Precio=@precio Where Id = @id
+
+    ALTER TABLE Usuarios
+ADD Administrador BIT  DEFAULT 0;
+
+CREATE PROCEDURE insertarNuevo
+@User VARCHAR (50),
+@Pass VARCHAR(50),
+@Tipo int
+as
+INSERT into Usuarios (Usuario,Pass,Administrador,TipoUsuario) OUTPUT INSERTED.Id VALUES (@User,@Pass,0,@tipo)
+
+
+ALTER TABLE Usuarios
+ALTER COLUMN Usuario VARCHAR(50) NULL;
+
+
+ALTER TABLE Usuarios
+ALTER COLUMN Pass VARCHAR(50) NULL;
+
+ALTER TABLE Usuarios
+ALTER COLUMN  TipoUsuario int  NULL;
+
+insert into Mesas (Numero, Capacidad)
+VALUES (1,4),
+(2,6)
+insert into Mozos (Nombre, Apellido)
+VALUES ('Juan','Perez'),
+('Luis','Sanchez')
+
+
+select * from Mesas
+select * from Mozos
+select * from Pedidos
+select * from pedido_productos
+
+alter table Productos
+add CantidadDisp int not null DEFAULT 1
+
+ALTER PROCEDURE spAltaProducto
+    @nombre VARCHAR(50),
+    @desc VARCHAR(100),
+    @precio MONEY,
+    @cant int
+AS
+BEGIN
+    INSERT INTO Productos (Nombre, Descripcion, Precio, Activo, CantidadDisp) 
+    VALUES (@nombre, @desc, @precio, 1,@cant)
+    end
+
+ alter PROCEDURE spModificarProducto
+    @nombre VARCHAR(50),
+    @desc VARCHAR(100),
+    @precio MONEY,
+    @id int,
+    @cant int
+AS
+    update Productos set  Nombre = @nombre, Descripcion = @desc, Precio=@precio, CantidadDisp=@cant Where Id = @id
+
+
+ALTER TABLE Mozos
+ADD NombreCompleto VARCHAR(100) NOT NULL DEFAULT 'Nombre Completo';
+
+UPDATE Mozos
+SET NombreCompleto = CONCAT(Nombre, ' ', Apellido);
+
+ALTER TABLE Mozos
+DROP COLUMN Nombre,
+alter table Mozos
+DROP COLUMN Apellido;
+
+ALTER TABLE Mesas
+DROP COLUMN Capacidad;
+
+ALTER TABLE Mesas
+ADD IdMozo INT NOT NULL DEFAULT '1';
+ALTER TABLE Mesas
+ADD CONSTRAINT FK_Mesas_Mozos FOREIGN KEY (IdMozo) REFERENCES Mozos(Id);
+
+insert into Mesas (Numero, IdMozo)
+VALUES (3,1),
+(4,1),
+(5,1),
+(6,1),
+(7,1),
+(8,1),
+(9,1),
+(10,1)
+
+ CREATE PROCEDURE spAltaMozo
+    @nombre VARCHAR(100)
+AS
+BEGIN
+    INSERT INTO Mozos (NombreCompleto) 
+    VALUES (@nombre)
+    end
+
+
+
+CREATE PROCEDURE spModificarMozo
+    @nombre VARCHAR(50),
+    @id int
+AS
+    update Mozos set  NombreCompleto = @nombre WHERE Id = @id
+
+
+ALTER TABLE Mozos ADD Activo BIT DEFAULT 1;
+insert into Mozos(Activo) values(1)
