@@ -10,35 +10,8 @@ namespace Negocio
     public class MozoNegocio
     {
         AccesoDatos datos = new AccesoDatos();
-        //public bool CrearMesa(Mozo Mozo)
-        //{
-        //    try
-        //    {
-        //        datos.setearConsulta("Select Id, Nombre, Apellido FROM Mozos where Id = @Id AND Nombre = @Nombre AND Apellido = @Apellido");
-        //        datos.setearParametro("@Id", Mozo.Id);
-        //        datos.setearParametro("@Nombre", Mozo.NombreApellido);
-        //        datos.setearParametro("@Apellido", Mozo.Apellido);
-
-        //        datos.ejecutarLectura();
-        //        while (datos.Lector.Read())
-        //        {
-
-        //            Mozo.Id = (int)datos.Lector["Id"];
-        //            return true;
-        //        }
-        //        return false;
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        datos.cerrarConexion();
-        //    }
-
-        //}
+     
+        
         public List<Mozo> listar()
         {
             List<Mozo> lista = new List<Mozo>();
@@ -46,7 +19,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Select Id,NombreCompleto From Mozos");
+                datos.setearConsulta("Select Id,NombreCompleto,Activo From Mozos");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -54,7 +27,9 @@ namespace Negocio
                     Mozo aux = new Mozo();
                     aux.Id = (int)datos.Lector["Id"];
                     aux.NombreCompleto = (string)datos.Lector["NombreCompleto"];
-
+                    //aux.Activo = (bool)datos.Lector["Activo"];
+                    //if (aux.Activo) { 
+                    //}
                     lista.Add(aux);
                 }
 
@@ -115,11 +90,13 @@ namespace Negocio
         public void eliminar(int id)
         {
             AccesoDatos datos = new AccesoDatos();
+           
             try
             {
-                datos.setearConsulta("Delete From Mozo where Id =" + id);
+                string consulta = "UPDATE Mozo SET Activo = 0 WHERE Id = " + id;
+                datos.setearConsulta(consulta);
+           
                 datos.ejecutarAccion();
-
             }
             catch (Exception ex)
             {
@@ -129,6 +106,7 @@ namespace Negocio
             finally
             {
                 datos.cerrarConexion();
+                
                 datos = null;
             }
         }

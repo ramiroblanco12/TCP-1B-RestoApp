@@ -79,7 +79,7 @@ namespace AplicacionResto
                 for (int i = 1; i <= cantidadMesas; i++)
                 {
                     int numeroMesa = i;
-                    int idMozo = -1;
+                    int idMozo = 1;
                     try
                     {
                         datos.setearConsulta("INSERT INTO Mesas (Numero, IdMozo) VALUES (@Numero, @IdMozo)");
@@ -140,6 +140,7 @@ namespace AplicacionResto
             try
             {
                 nuevo.NombreCompleto = txtMNombre.Text;
+                nuevo.Id= int.Parse(txtMId.Text);
 
                 negocio.modificarConSP(nuevo);
 
@@ -164,7 +165,7 @@ namespace AplicacionResto
                 MozoNegocio negocio = new MozoNegocio();
 
                 nuevo.Id = int.Parse(txtEId.Text);
-                negocio.eliminar(int.Parse(txtEId.Text));
+                negocio.eliminar(nuevo.Id);
 
 
                 Response.Redirect("Productos.aspx");
@@ -195,6 +196,21 @@ namespace AplicacionResto
                 string script = "alert('Por favor, completa el campo.');";
                 ClientScript.RegisterStartupScript(this.GetType(), "Alert", script, true);
             }
+
+        }
+
+        protected void btnAsignar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlAsignarMesa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlAsignarMozo_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

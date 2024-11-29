@@ -26,10 +26,7 @@
 
             <div class="tab-content mt-3">
                 <div class="tab-pane fade show active" id="Mozos" role="tabpanel" aria-labelledby="home-tab">
-                    <%--            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
-                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                            <ContentTemplate>--%>
                     <asp:GridView ID="dgvMozos" runat="server" AutoGenerateColumns="false" CssClass="table table-bordered table-hover" OnSelectedIndexChanged="CargarTXT">
                         <SelectedRowStyle ForeColor="Black" Font-Bold="true" />
                         <Columns>
@@ -39,8 +36,7 @@
                         </Columns>
 
                     </asp:GridView>
-                    <%--                            </ContentTemplate>--%>
-                    <%--                        </asp:UpdatePanel>--%>
+
 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
@@ -49,6 +45,7 @@
 
                         <button type="button" class="btn btn-secondary me-md-2" data-bs-toggle="modal" data-bs-target="#formularioModalModiMozo">Modificar </button>
                         <button type="button" class="btn btn-danger me-md-2" data-bs-toggle="modal" data-bs-target="#formularioModalEliminarMozo">Eliminar </button>
+                        <button type="button" class="btn btn-success me-md-2" data-bs-toggle="modal" data-bs-target="#formularioAsignarMesa">Asignar mesa </button>
 
                     </div>
                 </div>
@@ -56,6 +53,44 @@
         </div>
     </div>
 
+
+    <%--FORMULARIO Setear Mesa--%>
+    <div class="modal fade" id="formularioAsignarMesa" tabindex="-1" aria-labelledby="formularioModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-white text-dark">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formularioAsignar">Asignar Mesa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <div class="mb-3">
+                                <label for="ddlAsignarMesa" class="form-label">Mesa</label>
+                                <asp:DropDownList ID="ddlAsignarMesa" runat="server" OnSelectedIndexChanged="ddlAsignarMesa_SelectedIndexChanged" AutoPostBack="true" CssClass="form-select">
+                                    <asp:ListItem Text="Seleccione una mesa" Value="" Enabled="false" />
+                                </asp:DropDownList>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ddlAsignarMozo" class="form-label">Mozo</label>
+                                <asp:DropDownList ID="ddlAsignarMozo" runat="server" OnSelectedIndexChanged="ddlAsignarMozo_SelectedIndexChanged" AutoPostBack="true" CssClass="form-select">
+                                    <asp:ListItem Text="Seleccione un mozo" Value="" Enabled="false" />
+                                </asp:DropDownList>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <asp:Button ID="btnAsignar" runat="server" Text="Asignar" OnClick="btnAsignar_Click" CssClass="btn btn-primary" />
+                            </div>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <%--FORMULARIO AGREGAR--%>
@@ -216,19 +251,19 @@
                     <script>
                         document.getElementById("togglePassword").addEventListener("click", function () {
                             const passwordInput = document.getElementById("<%= txtPass.ClientID %>");
-                                const icon = this.querySelector("i");
+                            const icon = this.querySelector("i");
 
 
-                                if (passwordInput.type === "password") {
-                                    passwordInput.type = "text";
-                                    icon.classList.remove("bi-eye");
-                                    icon.classList.add("bi-eye-slash");
-                                } else {
-                                    passwordInput.type = "password";
-                                    icon.classList.remove("bi-eye-slash");
-                                    icon.classList.add("bi-eye");
-                                }
-                            });
+                            if (passwordInput.type === "password") {
+                                passwordInput.type = "text";
+                                icon.classList.remove("bi-eye");
+                                icon.classList.add("bi-eye-slash");
+                            } else {
+                                passwordInput.type = "password";
+                                icon.classList.remove("bi-eye-slash");
+                                icon.classList.add("bi-eye");
+                            }
+                        });
                     </script>
                     <div class="mb-3">
                         <label class="form-label">Tipo usuario</label>
