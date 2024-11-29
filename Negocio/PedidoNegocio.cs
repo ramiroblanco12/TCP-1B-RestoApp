@@ -32,7 +32,7 @@ namespace Negocio
                     pedidoId = (int)datos.Lector[0];
                 }
                 datos.cerrarConexion();
-                
+
 
                 // Agregar los productos relacionados al pedido
                 foreach (var producto in nuevo.Productos)
@@ -87,15 +87,48 @@ namespace Negocio
                     {
                         Id = (int)datos.Lector["Id"],
                         Fecha = (DateTime)datos.Lector["Fecha"],
-                        IdMozo = (int)datos.Lector["Mozo_id"],
                         IdMesa = (int)datos.Lector["Mesa_id"],
                         Monto = (decimal)datos.Lector["Monto"]
                     };
-
+                    int IdMozo = (int)datos.Lector["Mozo_id"];
+                     Mozo mozo = ObtenerMozoPorId(IdMozo);
+                    aux.Mozo = mozo;
                     lista.Add(aux);
                 }
 
                 return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+        private Mozo ObtenerMozoPorId(int idMozo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            Mozo mozo = null;
+
+            try
+            {
+                // Consulta para obtener el mozo por su Id
+                datos.setearConsulta("SELECT Id, NombreCompleto FROM Mozos WHERE Id = @Id");
+                datos.setearParametro("@Id", idMozo);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    mozo = new Mozo
+                    {
+                        Id = (int)datos.Lector["Id"],
+                        NombreCompleto = (string)datos.Lector["NombreCompleto"]
+                    };
+                }
+
+                return mozo;
             }
             catch (Exception ex)
             {
@@ -125,7 +158,7 @@ namespace Negocio
                 {
                     ProductoPedido detalle = new ProductoPedido
                     {
-                        IdProducto = (int)datos.Lector["producto_id"], 
+                        IdProducto = (int)datos.Lector["producto_id"],
                         NombreProducto = (string)datos.Lector["Nombre"],
                         Cantidad = (int)datos.Lector["cantidad"],
                         Precio = (decimal)datos.Lector["Precio"]

@@ -296,7 +296,7 @@ namespace AplicacionResto
 
         protected void ddlMesa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(ddlProducto.SelectedItem.Value))
+            if (!string.IsNullOrEmpty(ddlMesa.SelectedItem.Value))
             {
                 try
                 {
@@ -306,15 +306,15 @@ namespace AplicacionResto
                     // Buscar la mesa
                     Mesa mesaSeleccionada = ((List<Mesa>)Session["listaMesa"]).Find(x => x.Id == mesaId);
 
-                    // Mostrar el precio del producto seleccionado
-                    if (mesaSeleccionada != null)
+                    // Mostrar el nombre del mozo
+                    if (mesaSeleccionada != null && mesaSeleccionada.Mozo != null)
                     {
-                        txtMozo.Text = mesaSeleccionada.Mozo.ToString();
+                        txtMozo.Text = mesaSeleccionada.Mozo.NombreCompleto;  // Acceder al nombre del mozo
                     }
                     else
                     {
-                        // En caso de no encontrar el producto
-                        txtMozo.Text = "Mesa no encontrada";
+                        // En caso de no encontrar la mesa o el mozo
+                        txtMozo.Text = "Mesa no encontrada o sin mozo asignado";
                     }
                 }
                 catch (FormatException)
