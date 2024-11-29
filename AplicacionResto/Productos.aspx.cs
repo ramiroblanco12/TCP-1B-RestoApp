@@ -50,7 +50,7 @@ namespace AplicacionResto
 
 
 
-        protected void btnAceptar_Click(object sender, EventArgs e)
+        protected void BtnAceptar_Click(object sender, EventArgs e)
         {
 
             
@@ -98,7 +98,7 @@ namespace AplicacionResto
             dgvProductos.DataBind();
         }
 
-        protected void btnModificar_Click(object sender, EventArgs e)
+        protected void BtnModificar_Click(object sender, EventArgs e)
         {
             Producto nuevo = new Producto();
             ProductoNegocio negocio = new ProductoNegocio();
@@ -126,7 +126,7 @@ namespace AplicacionResto
         }
 
 
-        protected void btnAceptarEliminar_Click(object sender, EventArgs e)
+        protected void BtnAceptarEliminar_Click(object sender, EventArgs e)
         {
             try
             {
