@@ -9,8 +9,9 @@ namespace Dominio
     public class Pedido
     {
         public int Id { get; set; }
-        public int IdMozo { get; set; }
+        public Mozo Mozo { get; set; }
         public int IdMesa { get; set; }
+        public int IdMozo { get; set; }
         public decimal Monto { get; set; }
         public DateTime Fecha { get; set; }
         public List<ProductoPedido> Productos { get; set; }
