@@ -92,10 +92,20 @@
         </div>
         <div class="tab-content mt-3">
             <div class="tab-pane fade" id="configMesa" role="tabpanel">
-                <p>Contenido de la segunda pestaña.</p>
+
+                <asp:TextBox ID="txtCantidadMesas" runat="server" placeholder="Ingrese cantidad de mesas"></asp:TextBox>
+                <asp:Button ID="btnCrearMesas" runat="server" Text="Crear Mesas" OnClick="btnCrearMesas_Click" />
+                <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+
+
+
             </div>
 
         </div>
+
+
+
+
         <div class="tab-content mt-3">
             <div class="tab-pane fade" id="configMozo" role="tabpanel">
                 <p>Contenido de la tercera pestaña.</p>

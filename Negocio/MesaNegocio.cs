@@ -10,35 +10,35 @@ namespace Negocio
     public class MesaNegocio
     {
         AccesoDatos datos = new AccesoDatos();
-        public bool CrearMesa(Mesa Mesa)
-        {
-            try
-            {
-                datos.setearConsulta("Select Id, Numero, Capacidad  FROM Mesas where Id = @Id AND Numero = @Numero AND Capacidad = @Capacidad");
-                datos.setearParametro("@Id", Mesa.Id);
-                datos.setearParametro("@Numero", Mesa.Numero);
-                datos.setearParametro("@Capacidad", Mesa.Capacidad);
+        //public bool CrearMesa(Mesa Mesa)
+        //{
+        //    try
+        //    {
+        //        datos.setearConsulta("Select Id, Numero, Capacidad  FROM Mesas where Id = @Id AND Numero = @Numero AND Capacidad = @Capacidad");
+        //        datos.setearParametro("@Id", Mesa.Id);
+        //        datos.setearParametro("@Numero", Mesa.Numero);
+        //        //datos.setearParametro("@Capacidad", Mesa.Capacidad);
 
-                datos.ejecutarLectura();
-                while (datos.Lector.Read())
-                {
+        //        datos.ejecutarLectura();
+        //        while (datos.Lector.Read())
+        //        {
 
-                    Mesa.Id = (int)datos.Lector["Id"];
-                    return true;
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
+        //            Mesa.Id = (int)datos.Lector["Id"];
+        //            return true;
+        //        }
+        //        return false;
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw ex;
-            }
-            finally
-            {
-                datos.cerrarConexion();
-            }
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        datos.cerrarConexion();
+        //    }
 
-        }
+        //}
 
 
         public List<Mesa> listar()
@@ -48,7 +48,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("SELECT Id, Numero,Capacidad,Mozo FROM Mesas");
+                datos.setearConsulta("SELECT Id, Numero,IdMozo FROM Mesas");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -57,8 +57,7 @@ namespace Negocio
                     {
                         Id = (int)datos.Lector["Id"],
                         Numero = (int)datos.Lector["Numero"],
-                        Capacidad = (int)datos.Lector["Capacidad"],
-                        Mozo = (Mozo)datos.Lector["Mozo"]
+                        //Mozo = (Mozo)datos.Lector["IdMozo"]
                     };
 
                     lista.Add(aux);
