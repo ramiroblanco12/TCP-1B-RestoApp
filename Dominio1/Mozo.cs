@@ -10,15 +10,12 @@ namespace Dominio
     {
 
         public int Id { get; set; }
-<<<<<<< HEAD
+
         public string NombreApellido { get; set; }
 
         public string NombreCompleto { get; set; }
-=======
 
-        public string NombreCompleto { get; set; }
-       
->>>>>>> 6d33f27840a1f3353da348a33df222ed9fdc6fba
+
 
         public override string ToString()
         {
