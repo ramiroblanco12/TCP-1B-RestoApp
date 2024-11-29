@@ -1,8 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\",
+  "WorkspaceRootPath": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tomas\\onedrive\\escritorio\\resto\\tcp-1b-restoapp\\aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,6 +16,31 @@
       "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
+=======
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\personalizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\personalizar.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+=======
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\dominio1\\mesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|solutionrelative:dominio1\\mesa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 79c76148b92e10da9910d2a4af57b25237424358
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\negocio\\mozonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mozonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\personalizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\personalizar.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 743aa24ce6c5d0f88d63f01e32d1c3e5b7aba365
       "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\pedidos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -48,11 +74,41 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\negocio\\productonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+      "AbsoluteMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\dominio1\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{486867A0-DDF2-4D91-8D24-A0144F6C0A56}|Dominio1\\Dominio.csproj|solutionrelative:dominio1\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> 79c76148b92e10da9910d2a4af57b25237424358
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+<<<<<<< HEAD
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|c:\\users\\tbram\\documents\\facultad\\programacion iii\\restoaplicacion\\aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C68988D2-D797-4B88-91CE-309507EFDB5C}|AplicacionResto\\AplicacionResto.csproj|solutionrelative:aplicacionresto\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+=======
+      "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|c:\\users\\tomas\\onedrive\\escritorio\\resto\\tcp-1b-restoapp\\negocio\\productonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> f0360f39bf85f3686115c217b1276cc49cbafa53
+>>>>>>> 743aa24ce6c5d0f88d63f01e32d1c3e5b7aba365
       "RelativeMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|solutionrelative:negocio\\productonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\negocio\\mozonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{149C69A5-DDE6-41E3-A5BE-17705A7370B4}|Negocio\\Negocio.csproj|solutionrelative:negocio\\mozonegocio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< HEAD
+=======
+>>>>>>> 6d33f27840a1f3353da348a33df222ed9fdc6fba
+>>>>>>> 79c76148b92e10da9910d2a4af57b25237424358
+>>>>>>> 743aa24ce6c5d0f88d63f01e32d1c3e5b7aba365
     }
   ],
   "DocumentGroupContainers": [
@@ -62,6 +118,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+          "SelectedChildIndex": 7,
+=======
+<<<<<<< HEAD
+          "SelectedChildIndex": 8,
+=======
+<<<<<<< HEAD
+          "SelectedChildIndex": 8,
+>>>>>>> 79c76148b92e10da9910d2a4af57b25237424358
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Productos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Productos.aspx.cs",
+              "RelativeDocumentMoniker": "AplicacionResto\\Productos.aspx.cs",
+              "ToolTip": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Productos.aspx.cs",
+              "RelativeToolTip": "AplicacionResto\\Productos.aspx.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwHMAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T02:19:15.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Productos.aspx",
+              "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Productos.aspx",
+              "RelativeDocumentMoniker": "AplicacionResto\\Productos.aspx",
+              "ToolTip": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Productos.aspx",
+              "RelativeToolTip": "AplicacionResto\\Productos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+<<<<<<< HEAD
+              "WhenOpened": "2024-11-29T02:19:12.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+=======
+              "WhenOpened": "2024-11-29T00:49:03.408Z",
+              "EditorCaption": ""
+=======
+>>>>>>> 743aa24ce6c5d0f88d63f01e32d1c3e5b7aba365
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -212,14 +327,22 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 12,
+=======
+              "DocumentIndex": 10,
+>>>>>>> 79c76148b92e10da9910d2a4af57b25237424358
+>>>>>>> 743aa24ce6c5d0f88d63f01e32d1c3e5b7aba365
               "Title": "MozoNegocio.cs",
-              "DocumentMoniker": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\Negocio\\MozoNegocio.cs",
+              "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\Negocio\\MozoNegocio.cs",
               "RelativeDocumentMoniker": "Negocio\\MozoNegocio.cs",
-              "ToolTip": "C:\\Users\\tomas\\OneDrive\\Escritorio\\Resto\\TCP-1B-RestoApp\\Negocio\\MozoNegocio.cs",
+              "ToolTip": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\Negocio\\MozoNegocio.cs",
               "RelativeToolTip": "Negocio\\MozoNegocio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAEwGYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
+              "WhenOpened": "2024-11-29T01:08:29.564Z",
+=======
               "WhenOpened": "2024-11-28T22:00:54.05Z"
             },
             {
@@ -233,6 +356,45 @@
               "ViewState": "AgIAAA4AAAAAAAAAAAAiwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T22:59:22.892Z"
+<<<<<<< HEAD
+=======
+=======
+              "WhenOpened": "2024-11-28T22:59:22.892Z",
+>>>>>>> 79c76148b92e10da9910d2a4af57b25237424358
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Personalizar.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Personalizar.aspx.cs",
+              "RelativeDocumentMoniker": "AplicacionResto\\Personalizar.aspx.cs",
+              "ToolTip": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Personalizar.aspx.cs",
+              "RelativeToolTip": "AplicacionResto\\Personalizar.aspx.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAlwHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
+              "WhenOpened": "2024-11-29T01:35:30.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Personalizar.aspx",
+              "DocumentMoniker": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Personalizar.aspx",
+              "RelativeDocumentMoniker": "AplicacionResto\\Personalizar.aspx",
+              "ToolTip": "C:\\Users\\tbram\\Documents\\FACULTAD\\PROGRAMACION III\\RestoAplicacion\\AplicacionResto\\Personalizar.aspx",
+              "RelativeToolTip": "AplicacionResto\\Personalizar.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-29T01:34:28.295Z",
+              "EditorCaption": ""
+=======
+              "WhenOpened": "2024-11-28T21:46:54.113Z"
+>>>>>>> 6d33f27840a1f3353da348a33df222ed9fdc6fba
+>>>>>>> f0360f39bf85f3686115c217b1276cc49cbafa53
+>>>>>>> 79c76148b92e10da9910d2a4af57b25237424358
+>>>>>>> 743aa24ce6c5d0f88d63f01e32d1c3e5b7aba365
             }
           ]
         }

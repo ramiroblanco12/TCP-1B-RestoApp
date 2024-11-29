@@ -39,24 +39,21 @@ namespace Negocio
         //    }
 
         //}
-        public List<Producto> listar()
+        public List<Mozo> listar()
         {
-            List<Producto> lista = new List<Producto>();
+            List<Mozo> lista = new List<Mozo>();
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("Select Id,Nombre ,Descripcion, Precio, CantidadDisp From Productos");
+                datos.setearConsulta("Select Id,NombreCompleto From Mozos");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    Producto aux = new Producto();
+                    Mozo aux = new Mozo();
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.Descripcion = (string)datos.Lector["Descripcion"];
-                    aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.CantidadDisp = (int)datos.Lector["CantidadDisp"];
+                    aux.NombreCompleto = (string)datos.Lector["NombreCompleto"];
 
                     lista.Add(aux);
                 }
@@ -74,14 +71,14 @@ namespace Negocio
         }
 
 
-        public void agregarConSP(Producto nuevo)
+        public void agregarConSP(Mozo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
 
             try
             {
                 datos.setearProcedimiento("spAltaMozo");
-                datos.setearParametro("@nombre", nuevo.Nombre);
+                datos.setearParametro("@nombre", nuevo.NombreCompleto);
 
                 datos.ejecutarAccion();
             }
@@ -95,14 +92,14 @@ namespace Negocio
             }
         }
 
-        public void modificarConSP(Producto prod)
+        public void modificarConSP(Mozo mozo)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearProcedimiento("spModificarMozo");
-                datos.setearParametro("@nombre", prod.Nombre);
-                datos.setearParametro("@id", prod.Id);
+                datos.setearParametro("@nombre", mozo.NombreCompleto);
+                datos.setearParametro("@id", mozo.Id);
 
                 datos.ejecutarAccion();
             }

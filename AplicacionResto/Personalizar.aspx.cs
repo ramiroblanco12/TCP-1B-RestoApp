@@ -12,7 +12,7 @@ namespace AplicacionResto
 {
     public partial class Personalizar : System.Web.UI.Page
     {
-        public bool seleccionado { get; set; }
+        public bool sel { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["usuario"] == null || ((Dominio.Usuario)Session["usuario"]).tipoUsuario != Dominio.TipoUsuario.Admin)
@@ -30,7 +30,13 @@ namespace AplicacionResto
                 }
                 else
                 {
-
+                    if (!IsPostBack)
+                    {
+                        sel = false;
+                        MozoNegocio negocio = new MozoNegocio();
+                        dgvMozos.DataSource = negocio.listar();
+                        dgvMozos.DataBind();
+                    }
 
 
                 }
@@ -103,34 +109,12 @@ namespace AplicacionResto
             }
          }
 
-            protected void btnAceptar_Click(object sender, EventArgs e)
-            {
-
-
-
-                Producto nuevo = new Producto();
-                ProductoNegocio negocio = new ProductoNegocio();
-                try
-                {
-                    nuevo.Nombre = txtNombre.Text;
-                    negocio.agregarConSP(nuevo);
-
-
-                    Response.Redirect("Productos.aspx", false);
-                }
-                catch (Exception)
-                {
-                    string script = "alert('Por favor, completa el campo.');";
-                    ClientScript.RegisterStartupScript(this.GetType(), "Alert", script, true);
-                }
-
-            }
 
 
             protected void CargarTXT(object sender, EventArgs e)
             {
 
-                seleccionado = true;
+                sel = true;
                 GridViewRow SelectedRow = dgvMozos.SelectedRow;
 
                 txtEId.Text = SelectedRow.Cells[1].Text;
@@ -138,61 +122,81 @@ namespace AplicacionResto
                 txtMNombre.Text = SelectedRow.Cells[2].Text;
             }
 
-            protected void CargaDGV()
+
+        protected void CargaDGV()
+        {
+            MozoNegocio negocio = new MozoNegocio();
+            dgvMozos.DataSource = negocio.listar();
+            dgvMozos.DataBind();
+        }
+
+
+
+        protected void btnAceptarModificar_Click(object sender, EventArgs e)
+        {
+
+            Mozo nuevo = new Mozo();
+            MozoNegocio negocio = new MozoNegocio();
+            try
             {
-                ProductoNegocio negocio = new ProductoNegocio();
-                dgvMozos.DataSource = negocio.listar();
-                dgvMozos.DataBind();
-            }
+                nuevo.NombreCompleto = txtMNombre.Text;
 
-            protected void btnModificar_Click(object sender, EventArgs e)
+                negocio.modificarConSP(nuevo);
+
+                Response.Redirect("Personalizar.aspx", false);
+            }
+            catch (Exception ex)
             {
-                Producto nuevo = new Producto();
-                ProductoNegocio negocio = new ProductoNegocio();
-                try
-                {
-                    nuevo.Nombre = txtMNombre.Text;
-
-                    negocio.modificarConSP(nuevo);
-
-
-                    Response.Redirect("Productos.aspx", false);
-                }
-                catch (Exception ex)
-                {
-                    string mensaje = ex.Message.Replace("'", "\\'");
-                    string script = $"alert('Ocurrio un error: necesita cargar datos para aceptar' );";
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "errorAlert", script, true);
-
-                }
+                string mensaje = ex.Message.Replace("'", "\\'");
+                string script = $"alert('Ocurrio un error: necesita cargar datos para aceptar' );";
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "errorAlert", script, true);
 
             }
-
-
-            protected void btnAceptarEliminar_Click(object sender, EventArgs e)
-            {
-                try
-                {
-                    Producto nuevo = new Producto();
-                    ProductoNegocio negocio = new ProductoNegocio();
-
-                    nuevo.Id = int.Parse(txtEId.Text);
-                    negocio.eliminar(int.Parse(txtEId.Text));
-                    Response.Redirect("Productos.aspx");
-
-                }
-                catch (Exception ex)
-                {
-
-                    Session.Add("error", ex);
-
-                }
-            }
-
-
-
-
 
         }
+
+        protected void btnAceptarEliminar_Click1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Mozo nuevo = new Mozo();
+                MozoNegocio negocio = new MozoNegocio();
+
+                nuevo.Id = int.Parse(txtEId.Text);
+                negocio.eliminar(int.Parse(txtEId.Text));
+
+
+                Response.Redirect("Productos.aspx");
+
+            }
+            catch (Exception ex)
+            {
+
+                Session.Add("error", ex);
+
+            }
+
+        }
+
+        protected void btnaceptar_Click1(object sender, EventArgs e)
+        {
+            Mozo nuevo = new Mozo();
+            MozoNegocio negocio = new MozoNegocio();
+            try
+            {
+                nuevo.NombreCompleto = txtNombre.Text;
+                negocio.agregarConSP(nuevo);
+
+                Response.Redirect("Personalizar.aspx", false);
+            }
+            catch (Exception)
+            {
+                string script = "alert('Por favor, completa el campo.');";
+                ClientScript.RegisterStartupScript(this.GetType(), "Alert", script, true);
+            }
+
+        }
+    }
 }
 
